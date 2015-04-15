@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="contextStartedListener" class="pl.weztegre.listeners.ContextRefreshedListener" />
+
+       <bean id="simpleAsyncTaskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor" />
+
+       <bean id="applicationEventPublisher" class="org.springframework.context.event.SimpleApplicationEventMulticaster">
+              <property name="taskExecutor" ref="simpleAsyncTaskExecutor" />
+       </bean>
+
+       <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+              <property name="host" value="smtp.gmail.com" />
+              <property name="port" value="587" />
+              <property name="protocol" value="smtp" />
+              <property name="username" value="weztegre@gmail.com" />
+              <property name="password" value="1993WEZteGRE" />
+              <property name="javaMailProperties">
+                     <props>
+                            <prop key="mail.smtp.auth">true</prop>
+                            <prop key="mail.smtp.starttls.enable">true</prop>
+                            <prop key="mail.smtp.quitwait">false</prop>
+                     </props>
+              </property>
+       </bean>
+</beans>
