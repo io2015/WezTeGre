@@ -10,5 +10,6 @@
 Witaj <strong>${nick}</strong>!<br />
 Co tam? <br />
 Chcesz się <a href="<c:url value="/logout_perform" />">wylogować</a>?
+<a href="<c:url value="/addAdvertisement" />">Dodaj ogłoszenie</a>
 </body>
 </html>

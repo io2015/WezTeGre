@@ -4,10 +4,11 @@
 <!doctype html>
 <html>
 <head>
-  <title>Wybierz mordeczko co robić</title>
+  <title>Wybierz, gdzie chcesz się udać...</title>
 </head>
 <body>
 <a href="<c:url value="/signup" />">Zarejestruj się</a><br />
-<a href="<c:url value="/login" />">Zaloguj się</a>
+<a href="<c:url value="/login" />">Zaloguj się</a><br />
+<a href="<c:url value="/addAdvertisement" />">Dodaj ogłoszenie</a>
 </body>
 </html>
