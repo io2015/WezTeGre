@@ -24,6 +24,6 @@ public class LoginController {
         }
         model.setViewName("login");
 
-        return model;
+        return model;//test
     }
 }
