@@ -3,6 +3,7 @@ package pl.weztegre.listeners;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.MessageSource;
+import org.springframework.context.event.ApplicationEventMulticaster;
 import org.springframework.core.env.Environment;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -28,6 +29,9 @@ public class RegistrationListener implements ApplicationListener<OnRegistrationC
     @Autowired
     private Environment environment;
 
+    @Autowired
+    private ApplicationEventMulticaster asds;
+
     @Override
     public void onApplicationEvent(OnRegistrationCompleteEvent event) {
         this.confirmRegistration(event);
@@ -52,6 +56,7 @@ public class RegistrationListener implements ApplicationListener<OnRegistrationC
         email.setSubject(subject);
         email.setText(message + " \r\n" + confirmationUrl);
         email.setFrom(environment.getProperty("support.email"));
+        System.out.println("KONIEC");
         return email;
     }
 

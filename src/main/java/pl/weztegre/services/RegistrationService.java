@@ -9,7 +9,7 @@ import pl.weztegre.models.User;
 import java.util.List;
 
 public interface RegistrationService {
-        Registration createUserAndRegistration(final UserForm userForm) throws EmailExistsException, NickExistsException;
+        Registration createUserAndRegistration(final UserForm userForm);
         Registration getRegistrationToken(final String token);
         Registration updateUserAndRegistration(final Registration registration);
         User saveUserAndDeleteRegistration(final Registration registration);

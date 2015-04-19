@@ -10,9 +10,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.weztegre.events.OnRegistrationCompleteEvent;
 import pl.weztegre.exceptions.EmailExistsException;
 import pl.weztegre.exceptions.NickExistsException;
+import pl.weztegre.formObjects.UserData;
 import pl.weztegre.formObjects.UserForm;
 import pl.weztegre.models.Registration;
 import pl.weztegre.models.User;
@@ -29,10 +31,44 @@ import java.util.Calendar;
 public class UserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping(value = "/controlPanel")
-    public String controlPanelUser(Model model, Principal userPrincipal) {
+    public String controlPanel(@RequestParam(value = "success", required = false) String success, Model model, Principal userPrincipal) {
         model.addAttribute("nick", userPrincipal.getName());
 
+        if(success != null)
+            model.addAttribute("success", "Dane zostały zmienione");
+
         return "controlPanel";
+    }
+
+    @RequestMapping(value = "/changeData", method = RequestMethod.GET)
+    public String changeData(Model model, Principal userPrincipal) {
+        User user = userService.findByEmail(userPrincipal.getName());
+
+        model.addAttribute("userData", new UserData(user));
+        model.addAttribute("email", user.getEmail());
+
+        return "changeUserData";
+    }
+
+    @RequestMapping(value = "/changeData", method = RequestMethod.POST)
+    public String changeDataUserContactDetails(@Valid UserData userData,  BindingResult bindingResult, Principal userPrincipal) {
+        if(bindingResult.hasErrors())
+            return "changeUserData";
+
+        User user = userService.findByEmail(userPrincipal.getName());
+        user.setName(userData.getName());
+        user.setSurname(userData.getSurname());
+        user.setCity(userData.getCity());
+        user.setAddress(userData.getAddress());
+        user.setGaduGadu(userData.getGaduGadu());
+        user.setSkype(userData.getSkype());
+        user.setPhoneNumber(userData.getPhoneNumber());
+        userService.save(user);
+
+        return "redirect:/user/controlPanel?success";
     }
 }

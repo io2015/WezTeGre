@@ -3,13 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-       <bean id="contextStartedListener" class="pl.weztegre.listeners.ContextRefreshedListener" />
-
-       <bean id="simpleAsyncTaskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor" />
-
-       <bean id="applicationEventPublisher" class="org.springframework.context.event.SimpleApplicationEventMulticaster">
-              <property name="taskExecutor" ref="simpleAsyncTaskExecutor" />
+       <bean id="applicationEventMulticaster" class="org.springframework.context.event.SimpleApplicationEventMulticaster">
+              <property name="taskExecutor">
+                     <bean class="org.springframework.core.task.SimpleAsyncTaskExecutor" />
+              </property>
        </bean>
+
+       <bean id="contextStartedListener" class="pl.weztegre.listeners.ContextRefreshedListener" />
+       <bean id="registrationListener" class="pl.weztegre.listeners.RegistrationListener" />
 
        <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
               <property name="host" value="smtp.gmail.com" />

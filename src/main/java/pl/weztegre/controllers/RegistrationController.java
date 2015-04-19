@@ -44,23 +44,15 @@ public class RegistrationController {
         if(bindingResult.hasErrors())
             return "signup";
 
-        Registration registration = null;
-
-        try {
-            registration = registrationService.createUserAndRegistration(userForm);
-        } catch (final EmailExistsException e) {
-            bindingResult.rejectValue("email", "user.email", "Użytkownik o podanym emailu już istnieje.");
-        } catch (final NickExistsException e) {
-            bindingResult.rejectValue("nick", "user.nick", "Użytkownik o podanym nicku już istnieje.");
-        }
-
-        if(bindingResult.hasErrors())
-            return "signup";
+        Registration registration = registrationService.createUserAndRegistration(userForm);
 
         final String appUrl = "http://" + httpServletRequest.getServerName() + ":"
                 + httpServletRequest.getServerPort()
                 + httpServletRequest.getContextPath();
+
+        LOGGER.info("Przed wyslaniem maila");
         applicationEventPublisher.publishEvent(new OnRegistrationCompleteEvent(registration, httpServletRequest.getLocale(), appUrl));
+        LOGGER.info("Po wyslaniem maila");
 
         return "registeredSuccessfully";
 

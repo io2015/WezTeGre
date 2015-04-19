@@ -5,7 +5,8 @@
 <head>
         <title>Zarejestrowano pomyślnie</title>
 </head>
-<body>
-Użytkownik <strong>${userForm.nick}</strong> został zarejestrowany pomyślnie. Na adres <strong>${userForm.email}</strong> został wysłany link potwierdzający rejestracje.
-</body>
+        <body>
+                <strong>${userForm.name}</strong>, zostałeś zarejestrowany pomyślnie. Na adres <strong>${userForm.email}</strong> został
+                wysłany link potwierdzający rejestracje.
+        </body>
 </html>

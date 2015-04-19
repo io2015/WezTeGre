@@ -6,6 +6,10 @@ import pl.weztegre.formObjects.UserForm;
 import pl.weztegre.models.Registration;
 import pl.weztegre.models.User;
 
-public interface UserService {
+import java.util.List;
 
+public interface UserService {
+    List<User> findAll();
+    User save(User user);
+    User findByEmail(String email);
 }

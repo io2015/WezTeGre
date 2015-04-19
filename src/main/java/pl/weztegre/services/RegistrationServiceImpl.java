@@ -37,17 +37,11 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public Registration createUserAndRegistration(UserForm userForm) throws EmailExistsException, NickExistsException {
-        if(emailExist(userForm.getEmail()))
-            throw new EmailExistsException(userForm.getNick() + " email " + userForm.getEmail() + " is already used");
+    public Registration createUserAndRegistration(UserForm userForm) {
 
-        if(nickExist(userForm.getNick()))
-            throw new NickExistsException(userForm.getNick() + " exists");
-
-        final User user = new User(userForm.getNick(),
+        final User user = new User(userForm.getEmail(),
                 userForm.getName(),
                 userForm.getSurname(),
-                userForm.getEmail(),
                 passwordEncoder.encode(userForm.getPassword()));
 
         final Role userRole = roleRepository.findByRole("ROLE_USER");
@@ -78,16 +72,4 @@ public class RegistrationServiceImpl implements RegistrationService {
         return registrationRepository.findByToken(token);
     }
 
-
-    private boolean emailExist(final String email) {
-        final User user = userRepository.findByEmail(email);
-
-        return user != null;
-    }
-
-    private boolean nickExist(final String nick) {
-        final User user = userRepository.findByNick(nick);
-
-        return user != null;
-    }
 }

@@ -33,7 +33,7 @@ public class UserTest {
 
     @Test
     public void fieldsAreGood() {
-        User user = new User("Skotar", "Bartosz", "Skotarek", "slitbrokacik@buziaczek.info", "");
+        User user = new User("slitbrokacik@buziaczek.info", "Bartosz", "Skotarek", "");
 
         Set<ConstraintViolation<User>> constraintViolationSet = validator.validate(user);
 
