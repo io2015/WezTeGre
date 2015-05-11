@@ -23,6 +23,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.Calendar;
 
+
+/**
+* Kontroler odpowiedzialny za rejestrację. 
+*/
 @Controller
 @RequestMapping(value = "/signup")
 public class RegistrationController {
@@ -34,11 +38,21 @@ public class RegistrationController {
     @Autowired
     private ApplicationEventPublisher applicationEventPublisher;
 
+	/**
+	* Domyślna akcja kontrolera, zwraca widok formularza umożliwiającego rejestrację.
+	*/
     @RequestMapping
     public ModelAndView singUp() {
         return new ModelAndView("signup", "userForm", new UserForm());
     }
 
+	/**
+	* Metoda registerUser próbuje zarejestrować użytkownika.
+	* @param userForm Obiekt typu UserForm, zawiera dane przysłane w formularzu rejestracyjnym.
+	* @param bindingResult ?
+	* @param httpServletRequest Żądanie servlet
+	* @return Status rejestracji
+	*/
     @RequestMapping(method = RequestMethod.POST)
     public String registerUser(@Valid final UserForm userForm,  BindingResult bindingResult, HttpServletRequest httpServletRequest) {
         if(bindingResult.hasErrors())
@@ -58,6 +72,13 @@ public class RegistrationController {
 
     }
 
+	/**
+	* Metoda cofirmRegistration potwierdza rejestrację użytkownika
+	* @param token Token wygenerowany w procesie rejestracji
+	* @param httpServletRequest Żądanie servlet
+	* @param model Model, do którego zapisywane są wyniki
+	* @return String z kodem stanu
+	*/
     @RequestMapping(value = "/confirm/{token}", method = RequestMethod.GET)
     public String cofirmRegistration(@PathVariable("token") String token, HttpServletRequest httpServletRequest, Model model) {
         Registration registration = registrationService.getRegistrationToken(token);

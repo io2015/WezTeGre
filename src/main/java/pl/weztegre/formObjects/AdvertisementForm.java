@@ -10,6 +10,9 @@ import pl.weztegre.models.Platform;
 import java.util.Date;
 import java.util.List;
 
+/**
+* Klasa formularza służącego do dodawania nowych ogłoszeń na stronie.
+*/
 public class AdvertisementForm {
 
 

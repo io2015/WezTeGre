@@ -26,6 +26,9 @@ import java.nio.file.attribute.UserPrincipal;
 import java.security.Principal;
 import java.util.Calendar;
 
+/**
+* Kontroler odpowiedzialny za zarządzanie kontem użytkownika.
+*/
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
@@ -34,6 +37,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+	/**
+	* Metoda wyświetlająca panel zarządzania profilem użytkownika. Jeżeli wykonano jakieś zmiany, to jako atrybut przekazywana jest informacja o sukcesie.
+	* @param success Opcjonalny parametr typu String
+	* @param model Model
+	* @param userPrincipal
+	*/
     @RequestMapping(value = "/controlPanel")
     public String controlPanel(@RequestParam(value = "success", required = false) String success, Model model, Principal userPrincipal) {
         model.addAttribute("nick", userPrincipal.getName());
@@ -44,6 +53,9 @@ public class UserController {
         return "controlPanel";
     }
 
+	/**
+	* Metoda przekazująca do modelu dane użytkownika takie jak email.
+	*/
     @RequestMapping(value = "/changeData", method = RequestMethod.GET)
     public String changeData(Model model, Principal userPrincipal) {
         User user = userService.findByEmail(userPrincipal.getName());
@@ -54,6 +66,10 @@ public class UserController {
         return "changeUserData";
     }
 
+	/**
+	* Metoda dokonująca zmian w profilu użytkownika.
+	* @param userData dane o użytkowniku do zapisania
+	*/
     @RequestMapping(value = "/changeData", method = RequestMethod.POST)
     public String changeDataUserContactDetails(@Valid UserData userData,  BindingResult bindingResult, Principal userPrincipal) {
         if(bindingResult.hasErrors())

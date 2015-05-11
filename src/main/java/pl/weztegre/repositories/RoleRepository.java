@@ -7,6 +7,9 @@ import pl.weztegre.models.User;
 import java.util.List;
 import java.util.Set;
 
+/**
+* Interfejs RoleRepository.
+*/
 public interface RoleRepository extends JpaRepository<Role, Integer> {
     Role findByRole(String role);
 }

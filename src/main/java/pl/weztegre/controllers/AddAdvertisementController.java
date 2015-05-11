@@ -20,6 +20,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.security.Principal;
 
+/**
+* Kontroler addAdvertisement.
+* Odpowiedzialny za dodawanie nowego ogłoszenia na stronie.
+* Adres strony to /addAdvertisement.
+*/
 @Controller
 @RequestMapping(value = "/addAdvertisement")
 public class AddAdvertisementController {
@@ -28,11 +33,19 @@ public class AddAdvertisementController {
     @Autowired
     private ApplicationEventPublisher applicationEventPublisher;
 
+	/**
+	* Metoda zwracająca ModelAndView dla dodawania ogłoszeń gdy typ żądania to nie POST.
+	* @return ModelAndView ogłoszeń.
+	*/
     @RequestMapping
     public ModelAndView addAdvertisement() {
         return new ModelAndView("addAdvertisement", "advertisementForm", new AdvertisementForm());
     }
 
+	/**
+	* Metoda zwracająca stan dodwania nowego ogłoszenia. Tylko gdy typ żądania to POST.
+	* @return Zwraca status operacji
+	*/
     @RequestMapping(method = RequestMethod.POST)
     public String addAdvertisement(@Valid final AdvertisementForm advertisementForm,  BindingResult bindingResult, HttpServletRequest httpServletRequest) {
         if(bindingResult.hasErrors())

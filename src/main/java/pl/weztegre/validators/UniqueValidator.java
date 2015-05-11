@@ -15,7 +15,9 @@ import javax.validation.ConstraintValidatorContext;
 import java.lang.annotation.Annotation;
 import java.math.BigInteger;
 
-
+/**
+* Klasa UniqueValidator pozwala na sprawdzenie danych pod kontem unikalności.
+*/
 public class UniqueValidator implements ConstraintValidator<Unique, String> {
     @PersistenceContext
     private EntityManager entityManager;
@@ -24,6 +26,10 @@ public class UniqueValidator implements ConstraintValidator<Unique, String> {
     private String messageName;
     private Class clas;
 
+	/**
+	* Metoda inicjalizująca instancję klasy
+	* @param constraintAnnotation Opisy ograniczeń nałożonych na pola.
+	*/
     @Override
     public void initialize(final Unique constraintAnnotation) {
         column = constraintAnnotation.column();
@@ -31,6 +37,11 @@ public class UniqueValidator implements ConstraintValidator<Unique, String> {
         clas = constraintAnnotation.clas();
     }
 
+	/**
+	* Metoda sprawdzająca poprawność podanej wartości porównując ją z ograniczeniem
+	* @param value Sprawdzany string
+	* @param cvc ConstraintValidatorContext
+	*/
     @Override
     public boolean isValid(final String value, final ConstraintValidatorContext cvc) {
         boolean toReturn = false;
