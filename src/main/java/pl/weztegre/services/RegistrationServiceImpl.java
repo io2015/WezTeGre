@@ -38,7 +38,6 @@ public class RegistrationServiceImpl implements RegistrationService {
     private PasswordEncoder passwordEncoder;
 
     public Registration createUserAndRegistration(UserForm userForm) {
-
         final User user = new User(userForm.getEmail(),
                 userForm.getName(),
                 userForm.getSurname(),
@@ -72,4 +71,31 @@ public class RegistrationServiceImpl implements RegistrationService {
         return registrationRepository.findByToken(token);
     }
 
+    public void setRegistrationRepository(RegistrationRepository registrationRepository) {
+        this.registrationRepository = registrationRepository;
+    }
+
+    public UserRepository getUserRepository() {
+        return userRepository;
+    }
+
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public RoleRepository getRoleRepository() {
+        return roleRepository;
+    }
+
+    public void setRoleRepository(RoleRepository roleRepository) {
+        this.roleRepository = roleRepository;
+    }
+
+    public PasswordEncoder getPasswordEncoder() {
+        return passwordEncoder;
+    }
+
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 }
