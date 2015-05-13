@@ -27,24 +27,19 @@ public class AddAdvertisementControllerTest {
     private AddAdvertisementController addAdvertisementController;
     private MockMvc mockMvc;
     @Mock
-    BindingResult bindingResultMock;
+    private BindingResult bindingResultMock;
     @Mock
-    HttpServletRequest httpServletRequestMock;
+    private HttpServletRequest httpServletRequestMock;
 
     @Before
     public void setUp() throws Exception {
-        MockitoAnnotations.initMocks(this);
+        //MockitoAnnotations.initMocks(this);
         addAdvertisementController = new AddAdvertisementController();
     }
 
     @Test
     public void testAddAdvertisement() throws Exception {   //zwraca ModelAndView
-        //ModelAndViewAssert.(addAdvertisementController.addAdvertisement());
         ModelAndView expectedModelAndView = new ModelAndView("addAdvertisement", "advertisementForm", new AdvertisementForm());
-        /*this.mockMvc.perform(get("/addAdvertisement").session(session)
-                .accept(MediaType.TEXT_HTML))
-                .andExpect(status().isOk());
-                //.andExpect(view().name("test"));*/
         assertEquals("addAdvertisement", addAdvertisementController.addAdvertisement().getViewName());
     }
 
