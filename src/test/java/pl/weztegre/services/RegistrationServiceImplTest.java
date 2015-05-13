@@ -4,7 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 import pl.weztegre.formObjects.UserForm;
 import pl.weztegre.models.Registration;
-import pl.weztegre.models.Role;
 import pl.weztegre.models.User;
 import pl.weztegre.repositories.RegistrationRepository;
 import pl.weztegre.repositories.RoleRepository;
@@ -22,7 +21,7 @@ import static org.junit.Assert.*;
  */
 public class RegistrationServiceImplTest {
 
-    private RegistrationService registrationSrv;
+    private RegistrationService registrationService;
     private UserRepository mockUserRepository;
     private RegistrationRepository mockRegistrationRepository;
     private RoleRepository mockRoleRepository;
@@ -39,7 +38,7 @@ public class RegistrationServiceImplTest {
         //reszta żeby nie przepisywać w każdym teście
         user = new User("asdf@asdf.asdf", "asdf", "asdf", "asdf");
         registration = new Registration(user, "");
-        registrationSrv = new RegistrationServiceImpl();
+        registrationService = new RegistrationServiceImpl();    //nie jest Impl bo to interfejs
     }
 
     @Test
@@ -47,13 +46,13 @@ public class RegistrationServiceImplTest {
 
         expect(mockRoleRepository.findByRole("ROLE_USER")).atLeastOnce();     //check if user role is set
         expect(mockRegistrationRepository.save(registration)).andReturn(registration);
-        registrationSrv.setRoleRepository(mockRoleRepository);
-        registrationSrv.setRegistrationRepository(mockRegistrationRepository);
+        registrationService.setRoleRepository(mockRoleRepository);
+        registrationService.setRegistrationRepository(mockRegistrationRepository);
 
         replay(mockRegistrationRepository);
         replay(mockRoleRepository);
         UserForm userForm = new UserForm("asdf@asdf.asdf", "asdf", "asdf", "asdf", "asdf");
-        Registration actualRegistration = registrationSrv.createUserAndRegistration(userForm);
+        Registration actualRegistration = registrationService.createUserAndRegistration(userForm);
         User actualUser = actualRegistration.getUser();
 
         assertEquals(new User("asdf@asdf.asdf", "asdf", "asdf", "asdf"), actualUser);   //check if user is created correctly
@@ -64,10 +63,10 @@ public class RegistrationServiceImplTest {
     @Test
     public void testUpdateUserAndRegistration() throws Exception {
         expect(mockRegistrationRepository.save(registration)).andReturn(registration);
-        registrationSrv.setRegistrationRepository(mockRegistrationRepository);
+        registrationService.setRegistrationRepository(mockRegistrationRepository);
 
         replay(mockRegistrationRepository);
-        Registration actualRegistration = registrationSrv.updateUserAndRegistration(registration);
+        Registration actualRegistration = registrationService.updateUserAndRegistration(registration);
 
         verify(mockRegistrationRepository);
         assertEquals(registration, actualRegistration);
@@ -79,12 +78,12 @@ public class RegistrationServiceImplTest {
         expect(mockUserRepository.save(registration.getUser())).andReturn(user);
         mockRegistrationRepository.delete(registration);    //jest void, dlatego expect poniżej
         expectLastCall().atLeastOnce();
-        registrationSrv.setRegistrationRepository(mockRegistrationRepository);
-        registrationSrv.setUserRepository(mockUserRepository);
+        registrationService.setRegistrationRepository(mockRegistrationRepository);
+        registrationService.setUserRepository(mockUserRepository);
 
         replay(mockUserRepository);
         replay(mockRegistrationRepository);
-        User tempUsr = registrationSrv.saveUserAndDeleteRegistration(registration);
+        User tempUsr = registrationService.saveUserAndDeleteRegistration(registration);
 
         verify(mockRegistrationRepository);
         verify(mockUserRepository);
@@ -94,10 +93,10 @@ public class RegistrationServiceImplTest {
     @Test
     public void testGetRegistrationToken() throws Exception {
         expect(mockRegistrationRepository.findByToken("")).andReturn(registration);
-        registrationSrv.setRegistrationRepository(mockRegistrationRepository);
+        registrationService.setRegistrationRepository(mockRegistrationRepository);
 
         replay(mockRegistrationRepository);
-        Registration actualRegistration = registrationSrv.getRegistrationToken("");
+        Registration actualRegistration = registrationService.getRegistrationToken("");
 
         verify(mockRegistrationRepository);
         assertEquals(registration, actualRegistration);
