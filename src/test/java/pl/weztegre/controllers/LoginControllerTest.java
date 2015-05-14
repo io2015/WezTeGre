@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 /**
  * Created by st3rn on 13.05.15.
  */
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class LoginControllerTest {
 
     private LoginController loginController;

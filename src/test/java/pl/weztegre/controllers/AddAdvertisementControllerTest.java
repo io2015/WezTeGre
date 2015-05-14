@@ -26,14 +26,12 @@ public class AddAdvertisementControllerTest {
 
     private AddAdvertisementController addAdvertisementController;
     private MockMvc mockMvc;
-    @Mock
-    private BindingResult bindingResultMock;
-    @Mock
-    private HttpServletRequest httpServletRequestMock;
+    @Mock private BindingResult bindingResultMock;
+    @Mock private HttpServletRequest httpServletRequestMock;
 
     @Before
     public void setUp() throws Exception {
-        //MockitoAnnotations.initMocks(this);
+        //MockitoAnnotations.initMocks(this);   //nie trzeba jeżeli jest @RunWith Mockito
         addAdvertisementController = new AddAdvertisementController();
     }
 
