@@ -16,7 +16,7 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
 
 	/**
 	* Metoda initialize ustawia początkowe wartości zmiennych
-	* @param contrainAnnotation instancja FieldMatch zawierająca nazwy trzech pól, które należy sprawdzić.
+	* @param constraintAnnotation instancja FieldMatch zawierająca nazwy trzech pól, które należy sprawdzić.
 	*/
     @Override
     public void initialize(final FieldMatch constraintAnnotation) {
