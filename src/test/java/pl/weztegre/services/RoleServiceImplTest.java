@@ -24,7 +24,7 @@ public class RoleServiceImplTest {
     @Test
     public void testFindRole() throws Exception {
         roleServiceImpl.findRole("role");
-        Mockito.verify(roleRepositoryMock).findByRole("role");  //sprawdź czy hasErrors() zostało wywołane
+        Mockito.verify(roleRepositoryMock).findByRole("role");
     }
 
     @Test
