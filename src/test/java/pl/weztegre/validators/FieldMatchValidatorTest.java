@@ -25,8 +25,6 @@ public class FieldMatchValidatorTest {
     @Mock private Object objectMock;
     @Mock private BeanUtils beanUtilsMock;
     @Mock private ConstraintValidatorContext constraintValidatorContextMock;
-    @Mock private ConstraintValidatorContext.ConstraintViolationBuilder constraintViolationBuilderMock;
-    @Mock private ConstraintValidatorContext.ConstraintViolationBuilder.NodeBuilderCustomizableContext nodeBuilderCustomizableContextMock;
 
     @Before
     public void setUp() throws Exception {
