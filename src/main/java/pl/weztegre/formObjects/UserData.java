@@ -6,6 +6,9 @@ import pl.weztegre.models.User;
 import javax.persistence.Column;
 import javax.validation.constraints.Pattern;
 
+/**
+* Klasa przechowująca dane użytkowników.
+*/ 
 public class UserData {
     @Length(min = 3, max = 30, message = "Długość imienia musi zawierać się w przedziale 3-30.")
     private String name;

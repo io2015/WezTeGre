@@ -19,7 +19,9 @@ import pl.weztegre.repositories.UserRepository;
 import java.util.List;
 import java.util.UUID;
 
-
+/**
+* Klasa implementuje interfejs RoleService
+*/
 @Service
 @Transactional
 public class RoleServiceImpl implements RoleService {
@@ -28,11 +30,20 @@ public class RoleServiceImpl implements RoleService {
     @Autowired
     private RoleRepository roleRepository;
 
+	/**
+	* Metoda znajduje rolę po nazwie
+	* @param role Nazwa roli
+	* @return Rola
+	*/
     @Override
     public Role findRole(String role) {
         return roleRepository.findByRole(role);
     }
 
+	/**
+	* Metoda tworzy rolę o pddanej nazwie
+	* @param role Nazwa roli
+	*/
     @Override
     public void createRole(String role) {
         roleRepository.save(new Role(role));

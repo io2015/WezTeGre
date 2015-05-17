@@ -9,6 +9,9 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import pl.weztegre.services.RoleService;
 
+/**
+* Klasa ContextRefreshedListener nasłuchuje na zdarzenie ContextRefreshedEvent
+*/
 @Component
 public class ContextRefreshedListener implements ApplicationListener<ContextRefreshedEvent> {
     private final Logger LOGGER = LoggerFactory.getLogger(ContextRefreshedListener.class);
@@ -18,6 +21,9 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
     @Autowired
     private RoleService roleService;
 
+	/**
+	* Metoda onApplicationEvent sprawdza istnienie ról w systemie i odtwarza je, gdy potrzeba
+	*/
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         if(roleService == null || configured == true)
@@ -30,6 +36,10 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
         configured = true;
     }
 
+	/**
+	* Metoda createRoleIfDoesntExist tworzy rolę
+	* @param role Nazwa roli do utworzenia
+	*/
     private void createRoleIfDoesntExist(String role) {
         if(roleService.findRole(role) == null) {
             LOGGER.info("Nie znaleziono roli " + role + ". Dodawanie...");

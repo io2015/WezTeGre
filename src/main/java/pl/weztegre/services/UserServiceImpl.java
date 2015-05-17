@@ -20,22 +20,39 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+* Klasa UserService implementuje interfejs UserService
+*/
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
+	/**
+	* Implementacja metody znajdywania wszystkich użytkowników
+	* @return Lista użytkowników
+	*/
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
+	/**
+	* Implementacja metody zapisywania zmian dot. konta użytkownika
+	* @param user Dane użytkownika
+	* @return Status zapisywania
+	*/
     @Override
     public User save(User user) {
         return userRepository.save(user);
     }
 
+	/**
+	* Metoda znajduje użytkownika po emailu
+	* @param email Email użytkownika
+	* @return Użytkownik
+	*/
     @Override
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);

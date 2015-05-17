@@ -11,5 +11,10 @@ import java.util.Set;
 * Interfejs RoleRepository.
 */
 public interface RoleRepository extends JpaRepository<Role, Integer> {
+	/**
+	* Metoda znajduje rolę po nazwie
+	* @param role Nazwa roli
+	* @return Rola o podanej nazwie
+	*/
     Role findByRole(String role);
 }

@@ -8,8 +8,20 @@ import pl.weztegre.models.User;
 
 import java.util.List;
 
+/**
+* Interfejs UserService
+*/
 public interface UserService {
-    List<User> findAll();
+    /**
+	* Metoda znajduje wszystkich użytkowników
+	*/
+	List<User> findAll();
+	/**
+	* Metoda zapisuje użytkownika
+	*/
     User save(User user);
+	/**
+	* Metoda znajduje użytkownika po adresie email
+	*/
     User findByEmail(String email);
 }
