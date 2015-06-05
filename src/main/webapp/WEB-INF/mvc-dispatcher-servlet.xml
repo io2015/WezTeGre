@@ -9,12 +9,22 @@
 
     <bean id="applicationEventMulticaster" parent="applicationEventMulticaster"/>
 
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven conversion-service="conversionService" />
     <context:component-scan base-package="pl.weztegre"/>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean" >
+        <property name="converters">
+            <set>
+                <bean class="pl.weztegre.converters.StringToGameConverter" />
+            </set>
+        </property>
+    </bean>
+
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/js/"/>
 </beans>

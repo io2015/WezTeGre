@@ -6,12 +6,18 @@ import org.apache.commons.beanutils.BeanUtils;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-
+/**
+* Klasa FieldMatchValidator odpowiada za sprawdzanie poprawności wprowadzonych danych
+*/
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
     private String firstFieldName;
     private String secondFieldName;
     private String messageName;
 
+	/**
+	* Metoda initialize ustawia początkowe wartości zmiennych
+	* @param constraintAnnotation instancja FieldMatch zawierająca nazwy trzech pól, które należy sprawdzić.
+	*/
     @Override
     public void initialize(final FieldMatch constraintAnnotation) {
         firstFieldName = constraintAnnotation.first();
@@ -19,6 +25,12 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
         messageName = constraintAnnotation.message();
     }
 
+	/**
+	* Metoda sprawdza poprawność podanej wartości
+	* @param value Obiekt zawierający nazwę pól do sprawdzenia
+	* @param cvc ConstraintValidatorContext
+	* @return True lub False
+	*/
     @Override
     public boolean isValid(final Object value, final ConstraintValidatorContext cvc) {
         boolean toReturn = false;

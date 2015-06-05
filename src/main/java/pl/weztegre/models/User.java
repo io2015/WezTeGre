@@ -171,4 +171,9 @@ public class User {
     public void setResetedPasswords(List<ResetedPassword> resetedPasswords) {
         this.resetedPasswords = resetedPasswords;
     }
+
+    @Override
+    public String toString() {
+        return name + surname + "(" + email + ")";
+    }
 }

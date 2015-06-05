@@ -1,6 +1,7 @@
 package pl.weztegre.models;
 
 import org.hibernate.validator.constraints.Length;
+import pl.weztegre.enums.State;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -12,43 +13,72 @@ import java.util.List;
 @Table(name = "advertisements")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Advertisement {
-    public enum State { New, UsedBad, UsedAverage, UsedGood };
-
     @Id
     @GeneratedValue
     private Integer id;
 
-    @Length(min = 3, max = 100)
     private String title;
 
-    @Length(min = 5, max = 1000)
     private String content;
 
     @Enumerated
     @NotNull
     private State state;
 
-    @NotNull
-    private Date addTime;
+    @ManyToOne
+    @JoinColumn
+    private Game game;
 
-    @NotNull
-    private Date potencialEndTime;
+    @Temporal(TemporalType.DATE)
+    private Date date;
 
-    @JoinColumn(name = "idNonexistentGame")
-    @OneToOne
-    private GameNonexistent nonexistentGame;
+    @Temporal(TemporalType.TIME)
+    private Date time;
 
-    @ManyToMany
-    @JoinTable(name = "advertisement_platforms", joinColumns =  {@JoinColumn(name = "idAdvertisement")}, inverseJoinColumns = {@JoinColumn(name = "idPlatform")})
-    private List<Platform> platforms = new ArrayList<Platform>();
+    @Temporal(TemporalType.DATE)
+    private Date endDate;
 
-    @ManyToMany
-    @JoinTable(name = "advertisement_languages", joinColumns =  {@JoinColumn(name = "idAdvertisement")}, inverseJoinColumns = {@JoinColumn(name = "idLanguage")})
-    private List<Language> languages = new ArrayList<Language>();
+    @Temporal(TemporalType.TIME)
+    private Date endTime;
 
-    @ManyToMany
-    @JoinTable(name = "advertisement_distributions", joinColumns =  {@JoinColumn(name = "idAdvertisement")}, inverseJoinColumns = {@JoinColumn(name = "idDistribution")})
-    private List<Distribution> distribution = new ArrayList<Distribution>();
+    @ManyToOne
+    @JoinColumn
+    private Distribution distribution;
+
+    @ManyToOne
+    @JoinColumn
+    private Language language;
+
+    @ManyToOne
+    @JoinColumn
+    private Platform platform;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<GameForExchange> gamesForExchange;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Photo> photos;
+
+    public Advertisement() {
+
+    }
+
+    public Advertisement(String title, String content, State state, Game game, Date date, Date time, Date endDate, Date endTime,
+                         Distribution distribution, Language language, Platform platform, List<GameForExchange> gamesForExchange, List<Photo> photos) {
+        this.title = title;
+        this.content = content;
+        this.state = state;
+        this.game = game;
+        this.date = date;
+        this.time = time;
+        this.endDate = endDate;
+        this.endTime = endTime;
+        this.distribution = distribution;
+        this.language = language;
+        this.platform = platform;
+        this.gamesForExchange = gamesForExchange;
+        this.photos = photos;
+    }
 
     public Integer getId() {
         return id;
@@ -82,104 +112,83 @@ public class Advertisement {
         this.state = state;
     }
 
-    public Date getAddTime() {
-        return addTime;
-    }
-
-    public void setAddTime(Date addTime) {
-        this.addTime = addTime;
-    }
-
-    public Date getPotencialEndTime() {
-        return potencialEndTime;
-    }
-
-    public void setPotencialEndTime(Date potencialEndTime) {
-        this.potencialEndTime = potencialEndTime;
-    }
-
-    public GameNonexistent getNonexistentGame() {
-        return nonexistentGame;
-    }
-
-    public void setNonexistentGame(GameNonexistent nonexistentGame) {
-        this.nonexistentGame = nonexistentGame;
-    }
-
-    public List<Platform> getPlatforms() {
-        return platforms;
-    }
-
-    public void setPlatforms(List<Platform> platforms) {
-        this.platforms = platforms;
-    }
-
-    public List<Language> getLanguages() {
-        return languages;
-    }
-
-    public void setLanguages(List<Language> languages) {
-        this.languages = languages;
-    }
-
-    public List<Distribution> getDistribution() {
+    public Distribution getDistribution() {
         return distribution;
     }
 
-    public void setDistribution(List<Distribution> distribution) {
+    public void setDistribution(Distribution distribution) {
         this.distribution = distribution;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Advertisement that = (Advertisement) o;
-
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (title != null ? !title.equals(that.title) : that.title != null) return false;
-        if (content != null ? !content.equals(that.content) : that.content != null) return false;
-        if (state != that.state) return false;
-        if (addTime != null ? !addTime.equals(that.addTime) : that.addTime != null) return false;
-        if (potencialEndTime != null ? !potencialEndTime.equals(that.potencialEndTime) : that.potencialEndTime != null)
-            return false;
-        if (nonexistentGame != null ? !nonexistentGame.equals(that.nonexistentGame) : that.nonexistentGame != null)
-            return false;
-        if (platforms != null ? !platforms.equals(that.platforms) : that.platforms != null) return false;
-        if (languages != null ? !languages.equals(that.languages) : that.languages != null) return false;
-        return !(distribution != null ? !distribution.equals(that.distribution) : that.distribution != null);
-
+    public Language getLanguage() {
+        return language;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (title != null ? title.hashCode() : 0);
-        result = 31 * result + (content != null ? content.hashCode() : 0);
-        result = 31 * result + (state != null ? state.hashCode() : 0);
-        result = 31 * result + (addTime != null ? addTime.hashCode() : 0);
-        result = 31 * result + (potencialEndTime != null ? potencialEndTime.hashCode() : 0);
-        result = 31 * result + (nonexistentGame != null ? nonexistentGame.hashCode() : 0);
-        result = 31 * result + (platforms != null ? platforms.hashCode() : 0);
-        result = 31 * result + (languages != null ? languages.hashCode() : 0);
-        result = 31 * result + (distribution != null ? distribution.hashCode() : 0);
-        return result;
+    public void setLanguage(Language language) {
+        this.language = language;
     }
 
-    @Override
-    public String toString() {
-        return "Advertisement{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", state=" + state +
-                ", addTime=" + addTime +
-                ", potencialEndTime=" + potencialEndTime +
-                ", nonexistentGame=" + nonexistentGame +
-                ", platforms=" + platforms +
-                ", languages=" + languages +
-                ", distribution=" + distribution +
-                '}';
+    public Platform getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(Platform platform) {
+        this.platform = platform;
+    }
+
+    public List<Photo> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(List<Photo> photos) {
+        this.photos = photos;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public List<GameForExchange> getGamesForExchange() {
+        return gamesForExchange;
+    }
+
+    public void setGamesForExchange(List<GameForExchange> gamesForExchange) {
+        this.gamesForExchange = gamesForExchange;
     }
 }

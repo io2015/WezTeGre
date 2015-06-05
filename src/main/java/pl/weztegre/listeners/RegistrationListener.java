@@ -15,6 +15,9 @@ import pl.weztegre.services.UserService;
 import java.util.UUID;
 
 
+/**
+* Klasa RegistrationListener implementuje interfejs ApplicationListener i oczekuje na zdarzenie zakończenia rejestracji
+*/
 @Component
 public class RegistrationListener implements ApplicationListener<OnRegistrationCompleteEvent> {
     @Autowired
@@ -45,6 +48,12 @@ public class RegistrationListener implements ApplicationListener<OnRegistrationC
         javaMailSender.send(email);
     }
 
+	/**
+	* Metoda tworzy i zwraca wiadomość email z linkiem służącym do potwierdzenia rejestracji.
+	* @param event Zdarzenie zakończenia rejestracji
+	* @param user Dane użytkownika
+	* @param token Token potrzebny do aktywacji
+	*/
     private final SimpleMailMessage constructEmailMessage(final OnRegistrationCompleteEvent event, final User user, final String token) {
         final String recipientAddress = user.getEmail();
         final String subject = "Potwierdzenie rejestracji";

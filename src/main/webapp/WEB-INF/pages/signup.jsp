@@ -11,27 +11,27 @@
 <form:form method="POST" modelAttribute="userForm" action="/signup">
         <table>
                 <tr>
-                        <td>Email:</td>
+                        <td>Email*:</td>
                         <td><form:input path="email"/></td>
                         <td><form:errors path="email"/></td>
                 </tr>
                 <tr>
-                        <td>Imię:</td>
+                        <td>Imię*:</td>
                         <td><form:input path="name"/></td>
                         <td><form:errors path="name"></form:errors></td>
                 </tr>
                 <tr>
-                        <td>Nazwisko:</td>
+                        <td>Nazwisko*:</td>
                         <td><form:input path="surname"/></td>
                         <td><form:errors path="surname"/></td>
                 </tr>
                 <tr>
-                        <td>Hasło:</td>
+                        <td>Hasło*:</td>
                         <td><form:password path="password"/></td>
                         <td><form:errors path="password"/></td>
                 </tr>
                 <tr>
-                        <td>Potwierdzenie hasła:</td>
+                        <td>Potwierdzenie hasła*:</td>
                         <td><form:password path="passwordConfirmation"/></td>
                         <td><form:errors path="passwordConfirmation"/></td>
                 </tr>

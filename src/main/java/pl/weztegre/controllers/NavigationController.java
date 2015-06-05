@@ -2,11 +2,15 @@ package pl.weztegre.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class NavigationController {
-    @RequestMapping(value = "/")
-    public String indexPage() {
-        return "index";
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String startPage() {
+        return "redirect:advertisement/list";
     }
 }

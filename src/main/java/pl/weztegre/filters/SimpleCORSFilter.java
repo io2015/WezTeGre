@@ -12,9 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Component;
 
+/**
+* Filtr CORS.
+*/
 @Component
 public class SimpleCORSFilter implements Filter {
 
+	/**
+	* Metoda doFilter blokuje żądania z obcych domen, które nie spełniają zdefiniowanych tutaj warunków.
+	*/
 	public void doFilter(ServletRequest req, ServletResponse res,
 			FilterChain chain) throws IOException, ServletException {
 		HttpServletResponse response = (HttpServletResponse) res;
@@ -27,9 +33,16 @@ public class SimpleCORSFilter implements Filter {
 		chain.doFilter(req, res);
 	}
 
+	/**
+	* Metoda inicjalizuje instancję klasy
+	* @param filterConfig Obiekt zawierający ustawienia filtra
+	*/
 	public void init(FilterConfig filterConfig) {
 	}
 
+	/**
+	* Destruktor klasy
+	*/
 	public void destroy() {
 	}
 

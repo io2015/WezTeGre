@@ -14,6 +14,13 @@ public class Distribution {
     @Column(length = 100)
     private String distribution;
 
+    public Distribution() {
+    }
+
+    public Distribution(String distribution) {
+        this.distribution = distribution;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -51,9 +58,6 @@ public class Distribution {
 
     @Override
     public String toString() {
-        return "Distribution{" +
-                "id=" + id +
-                ", distribution='" + distribution + '\'' +
-                '}';
+        return distribution;
     }
 }

@@ -12,4 +12,5 @@ public interface UserService {
     List<User> findAll();
     User save(User user);
     User findByEmail(String email);
+    User findOne(Integer id);
 }

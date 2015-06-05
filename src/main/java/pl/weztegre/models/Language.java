@@ -14,6 +14,13 @@ public class Language {
     @Column(length = 100)
     private String language;
 
+    public Language() {
+    }
+
+    public Language(String language) {
+        this.language = language;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -51,9 +58,6 @@ public class Language {
 
     @Override
     public String toString() {
-        return "Language{" +
-                "id=" + id +
-                ", language='" + language + '\'' +
-                '}';
+        return language;
     }
 }

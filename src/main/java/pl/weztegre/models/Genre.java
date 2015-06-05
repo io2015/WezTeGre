@@ -14,6 +14,14 @@ public class Genre {
     @Column(length = 100)
     private String genre;
 
+    public Genre() {
+
+    }
+
+    public Genre(String genre) {
+        this.genre = genre;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -51,9 +59,6 @@ public class Genre {
 
     @Override
     public String toString() {
-        return "Genre{" +
-                "id=" + id +
-                ", genre='" + genre + '\'' +
-                '}';
+        return genre;
     }
 }

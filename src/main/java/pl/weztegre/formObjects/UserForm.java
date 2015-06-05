@@ -12,6 +12,9 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Pattern;
 
+/**
+* Klasa UserFom obsługuje dane użytkowników.
+*/
 @FieldMatch(first = "passwordConfirmation", second = "password", message = "Hasła muszą być takie same.")
 public class UserForm {
     @Email(message = "To nie jest poprawny email")
@@ -30,9 +33,21 @@ public class UserForm {
 
     private String passwordConfirmation;
 
+	/**
+	* Konstruktor klasy
+	*/
     public UserForm() {
     }
 
+	
+	/**
+	* Konstruktor klasy
+	* @param email Email użytkownika
+	* @param name Imię użytkownika
+	* @param surname Nazwisko użytkownika
+	* @param password Hasło użytkownika
+	* @param passwordConfirmation Ponownie wprowadzone hasło użytkownika
+	*/
     public UserForm(String email, String name, String surname, String password, String passwordConfirmation) {
         this.email = email;
         this.name = name;
@@ -41,46 +56,84 @@ public class UserForm {
         this.passwordConfirmation = passwordConfirmation;
     }
 
+	/**
+	* Metoda zwraca maila użytkownika
+	*/
     public String getEmail() {
         return email;
     }
 
+	/**
+	* Metoda ustawia maila na podany
+	* @param email Nowy mail użytkownika
+	*/
     public void setEmail(String email) {
         this.email = email;
     }
 
+	/**
+	* Metoda zwraca imię użytkownika
+	*/
     public String getName() {
         return name;
     }
 
+	/**
+	* Metoda ustawia imię użytkownika
+	* @param name Nowe imię
+	*/
     public void setName(String name) {
         this.name = name;
     }
 
+	/**
+	* Metoda zwraca nazwisko użytkownika
+	*/
     public String getSurname() {
         return surname;
     }
 
+	/**
+	* Metoda ustawia nazwisko użytkownika na podane
+	* @param surname Nowe nazwisko
+	*/
     public void setSurname(String surname) {
         this.surname = surname;
     }
 
+	/**
+	* Metoda zwraca hasło użytkownika
+	*/
     public String getPassword() {
         return password;
     }
 
+	/**
+	* Metoda ustawia hasło na podane
+	* @param password Nowe hasło
+	*/
     public void setPassword(String password) {
         this.password = password;
     }
 
+	/**
+	* Metoda zwraca hasło użytkownika
+	*/
     public String getPasswordConfirmation() {
         return passwordConfirmation;
     }
-
+	
+	/**
+	* Metoda ustawia hasło na podane
+	* @param passwordConfirmation Nowe hasło
+	*/
     public void setPasswordConfirmation(String passwordConfirmation) {
         this.passwordConfirmation = passwordConfirmation;
     }
 
+	/**
+	* Metoda służąca do porównywania użytkowników
+	*/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -96,6 +149,9 @@ public class UserForm {
 
     }
 
+	/**
+	* Metoda generująca hash
+	*/
     @Override
     public int hashCode() {
         int result = email != null ? email.hashCode() : 0;

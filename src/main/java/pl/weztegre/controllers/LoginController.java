@@ -6,8 +6,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+* Kontroler LoginController.
+* Odpowiada za logowanie na stronie.
+* Podstrona /login
+*/
 @Controller
 public class LoginController {
+	/**
+	* Metoda loginPage.
+	* @return ModelAndView zawierający status logowania lub błędy, które zostały wychwycone podczas logowania.
+	*/
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView loginPage(
             @RequestParam(value = "error", required = false) String error,

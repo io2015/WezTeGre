@@ -30,6 +30,13 @@ public class Platform {
         this.platform = platform;
     }
 
+    public Platform() {
+    }
+
+    public Platform(String platform) {
+        this.platform = platform;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -51,9 +58,6 @@ public class Platform {
 
     @Override
     public String toString() {
-        return "Platform{" +
-                "id=" + id +
-                ", platform='" + platform + '\'' +
-                '}';
+        return platform;
     }
 }
