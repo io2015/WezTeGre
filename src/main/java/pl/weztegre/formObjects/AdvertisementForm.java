@@ -8,6 +8,9 @@ import pl.weztegre.models.*;
 import java.util.Date;
 import java.util.List;
 
+/**
+* Klasa formularza służącego do dodawania nowych ogłoszeń na stronie.
+*/
 public class AdvertisementForm {
     @Length(min = 3, max = 100, message = "Długość tytułu musi zawierać się w przedziale 3-30.")
     private String title;

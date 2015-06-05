@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.UUID;
 
 
+/**
+* Klasa  RegistrationSer implementuje interfejs RegistrationService
+*/
 @Service
 @Transactional
 public class RegistrationServiceImpl implements RegistrationService {
@@ -36,9 +39,10 @@ public class RegistrationServiceImpl implements RegistrationService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
+	/**
+	* Metoda tworząca nowego użytkownika
+	*/
     public Registration createUserAndRegistration(UserForm userForm) {
-
         final User user = new User(userForm.getEmail(),
                 userForm.getName(),
                 userForm.getSurname(),
@@ -51,14 +55,18 @@ public class RegistrationServiceImpl implements RegistrationService {
 
         return registrationRepository.save(registration);
     }
-
+	/**
+	* Metoda aktualizuje użytkownika
+	*/
     public Registration updateUserAndRegistration(Registration registration) {
         registration.setNewExpiryDate();
         registration.setToken(UUID.randomUUID().toString());
 
         return registrationRepository.save(registration);
     }
-
+	/**
+	* Metoda zapisująca zmiany użytkownika
+	*/
     @Override
     public User saveUserAndDeleteRegistration(Registration registration) {
         final User user = userRepository.save(registration.getUser());
@@ -66,10 +74,56 @@ public class RegistrationServiceImpl implements RegistrationService {
 
         return user;
     }
-
+	/**
+	* Metoda zwraca token
+	*/
     @Override
     public Registration getRegistrationToken(String token) {
         return registrationRepository.findByToken(token);
     }
 
+	/**
+	* Metoda pozwala na ustawienie repozytorium rejestracji
+	*/
+    public void setRegistrationRepository(RegistrationRepository registrationRepository) {
+        this.registrationRepository = registrationRepository;
+    }
+	/**
+	* Metoda zwraca repozytorium użytkownika
+	*/
+    public UserRepository getUserRepository() {
+        return userRepository;
+    }
+
+	/**
+	* Metoda pozwala na ustawienie repozytorium użytkownika
+	*/
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+	/**
+	* Metoda pozwala na uzyskanie repozytorium ról
+	*/
+    public RoleRepository getRoleRepository() {
+        return roleRepository;
+    }
+
+	/**
+	* Metoda pozwala na ustawienie repozytorium ról
+	*/
+    public void setRoleRepository(RoleRepository roleRepository) {
+        this.roleRepository = roleRepository;
+    }
+	/**
+	* Metoda pozwala pobranie
+	*/
+    public PasswordEncoder getPasswordEncoder() {
+        return passwordEncoder;
+    }
+	/**
+	* Metoda pozwala na ustawienie enkodera haseł
+	*/
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 }
