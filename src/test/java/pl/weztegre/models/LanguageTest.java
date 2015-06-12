@@ -42,7 +42,7 @@ public class LanguageTest {
 
     @Test
     public void testToString() throws Exception {
-        assertEquals("Language{id=1, language='null'}",
+        assertEquals(null,
                 Language.toString());
 
     }

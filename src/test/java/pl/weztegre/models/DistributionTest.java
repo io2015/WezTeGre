@@ -41,7 +41,7 @@ public class DistributionTest {
 
     @Test
     public void testToString() throws Exception {
-        assertEquals("Distribution{id=1, distribution='null'}",
+        assertEquals(null,
                 Distribution.toString());
 
     }

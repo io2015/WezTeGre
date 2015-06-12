@@ -42,7 +42,7 @@ public class PlatformTest {
 
     @Test
     public void testToString() throws Exception {
-        assertEquals("Platform{id=1, platform='null'}",
+        assertEquals(null,
                 Platform.toString());
 
     }

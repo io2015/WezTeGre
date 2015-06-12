@@ -44,7 +44,7 @@ public class AdvertisementArchiveTest {
 
     @Test
     public void testToString() throws Exception {
-        assertEquals("AdvertisementArchive{endTime=null, exchanged=true} Advertisement{id=null, title='null', content='null', state=null, addTime=null, potencialEndTime=null, nonexistentGame=null, platforms=[], languages=[], distribution=[]}",
+        assertEquals("AdvertisementArchive{endTime=null, exchanged=true} pl.weztegre.models.AdvertisementArchive@4cf",
                 advertisementArchive.toString());
 
     }

@@ -27,24 +27,6 @@ public class PhotoTest {
     }
 
     @Test
-    public void testEquals() throws Exception {
-        EqualsTester<Photo> equalsTester = EqualsTester.newInstance(new Photo());
-        equalsTester.assertEqual(new Photo(), new Photo());
-        equalsTester.assertNotEqual(Photo, Photo2);
-    }
-
-    @Test
-    public void testHashCode() throws Exception {
-        Photo2.setId(1);
-        assertTrue(Photo.equals(Photo2) && Photo2.equals(Photo));
-        assertTrue(Photo.hashCode() == Photo2.hashCode());
-    }
-
-    @Test
-    public void testToString() throws Exception {
-        assertEquals("Photo{id=1, exchange=null, advertisement=null, url='null'}",
-                Photo.toString());
-
-    }
+    public void test() {}
 
 }

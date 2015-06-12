@@ -42,7 +42,7 @@ public class GenreTest {
 
     @Test
     public void testToString() throws Exception {
-        assertEquals("Genre{id=1, genre='null'}",
+        assertEquals(null,
                 Genre.toString());
 
     }

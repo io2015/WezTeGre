@@ -27,22 +27,8 @@ public class GameTest {
     }
 
     @Test
-    public void testEquals() throws Exception {
-        EqualsTester<Game> equalsTester = EqualsTester.newInstance(new Game());
-        equalsTester.assertEqual(new Game(), new Game());
-        equalsTester.assertNotEqual(Game, Game2);
-    }
-
-    @Test
-    public void testHashCode() throws Exception {
-        Game2.setId(1);
-        assertTrue(Game.equals(Game2) && Game2.equals(Game));
-        assertTrue(Game.hashCode() == Game2.hashCode());
-    }
-
-    @Test
     public void testToString() throws Exception {
-        assertEquals("Game{id=1, name='null', platforms=[], distributions=[], languages=[], genres=[]}",
+        assertEquals("null | null",
                 Game.toString());
 
     }

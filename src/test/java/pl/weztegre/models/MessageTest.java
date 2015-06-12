@@ -27,24 +27,5 @@ public class MessageTest {
     }
 
     @Test
-    public void testEquals() throws Exception {
-        EqualsTester<Message> equalsTester = EqualsTester.newInstance(new Message());
-        equalsTester.assertEqual(new Message(), new Message());
-        equalsTester.assertNotEqual(Message, Message2);
-    }
-
-    @Test
-    public void testHashCode() throws Exception {
-        Message2.setId(1);
-        assertTrue(Message.equals(Message2) && Message2.equals(Message));
-        assertTrue(Message.hashCode() == Message2.hashCode());
-    }
-
-    @Test
-    public void testToString() throws Exception {
-        assertEquals("Message{id=1, sender=null, addressee=null, subject='null', content='null', city='null', senderRead=false, addresseeRead=false, value=null, advertisement=null}",
-                Message.toString());
-
-    }
-
+    public void test() {}
 }

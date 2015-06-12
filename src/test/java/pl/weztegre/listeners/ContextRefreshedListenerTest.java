@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.context.event.ContextRefreshedEvent;
-import pl.weztegre.services.RoleService;
+import pl.weztegre.services.*;
 
 import static org.junit.Assert.*;
 
@@ -20,6 +20,11 @@ public class ContextRefreshedListenerTest {
     @InjectMocks private ContextRefreshedListener contextRefreshedListener;
     @Mock private RoleService roleServiceMock;
     @Mock private ContextRefreshedEvent contextRefreshedEventMock;
+    @Mock private PlatformService platformServiceMock;
+    @Mock private LanguageService languageServiceMock;
+    @Mock private DistributionService distributionServiceMock;
+    @Mock private GameService gameServiceMock;
+    @Mock private GenreService genreServiceMock;
 
     @Test
     public void testOnApplicationEvent() throws Exception {
