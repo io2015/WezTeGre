@@ -22,6 +22,6 @@ public class NavigationControllerTest {
 
     @Test
     public void testIndexPage() throws Exception {
-        assertEquals("index", navigationController.indexPage());
+        assertEquals("redirect:advertisement/list", navigationController.startPage());
     }
 }
