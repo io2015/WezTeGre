@@ -1,6 +1,5 @@
 package pl.weztegre.services;
 
-import org.springframework.stereotype.Service;
 import pl.weztegre.models.Genre;
 
 import java.util.List;

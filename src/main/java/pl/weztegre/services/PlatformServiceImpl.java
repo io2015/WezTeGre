@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.weztegre.models.Platform;
-import pl.weztegre.models.Role;
 import pl.weztegre.repositories.PlatformRepository;
-import pl.weztegre.repositories.RoleRepository;
 
 import java.util.List;
 

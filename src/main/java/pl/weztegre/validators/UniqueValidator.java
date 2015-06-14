@@ -1,19 +1,12 @@
 package pl.weztegre.validators;
 
 
-import org.apache.commons.beanutils.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import pl.weztegre.repositories.UserRepository;
-import pl.weztegre.services.UserService;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.Table;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.lang.annotation.Annotation;
-import java.math.BigInteger;
 
 /**
 * Klasa UniqueValidator pozwala na sprawdzenie danych pod kontem unikalności.

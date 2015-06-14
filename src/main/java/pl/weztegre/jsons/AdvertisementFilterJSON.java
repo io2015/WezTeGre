@@ -1,7 +1,5 @@
 package pl.weztegre.jsons;
 
-import java.util.List;
-
 public class AdvertisementFilterJSON {
     private String find;
     private Boolean inDescription;

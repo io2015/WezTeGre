@@ -1,10 +1,7 @@
 package pl.weztegre.formObjects;
 
 import org.hibernate.validator.constraints.Length;
-import pl.weztegre.enums.State;
-import pl.weztegre.models.*;
-
-import java.util.List;
+import pl.weztegre.models.User;
 
 public class MessageForm {
     private User addressee;

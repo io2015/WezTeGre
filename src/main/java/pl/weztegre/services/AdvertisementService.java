@@ -1,7 +1,6 @@
 package pl.weztegre.services;
 
 import pl.weztegre.models.Advertisement;
-import pl.weztegre.models.Distribution;
 import pl.weztegre.pojos.AdvertisementPOJO;
 
 import java.util.List;

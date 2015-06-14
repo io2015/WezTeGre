@@ -5,10 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.weztegre.models.*;
+import pl.weztegre.models.Game;
+import pl.weztegre.models.Genre;
 import pl.weztegre.repositories.GameRepository;
 
-import java.util.LinkedList;
 import java.util.List;
 
 

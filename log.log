@@ -1,0 +1,875 @@
+23:11:56,250  INFO RegistrationController:67 - Przed wyslaniem maila
+23:11:56,266  INFO RegistrationController:69 - Po wyslaniem maila
+23:11:56,467  INFO ContextRefreshedListener:26 - Wstepne konfigurowanie bazy danych. Dodawanie rol.
+23:11:56,467  INFO ContextRefreshedListener:35 - Nie znaleziono roli ROLE_USER. Dodawanie...
+23:11:56,467  INFO ContextRefreshedListener:35 - Nie znaleziono roli ROLE_ADMIN. Dodawanie...
+23:11:57,155  INFO DefaultTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+23:11:57,264  INFO DefaultTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6c4a2da, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@579f99ae, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f229b73, org.springframework.test.context.transaction.TransactionalTestExecutionListener@90bb332, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5f219c41]
+23:11:57,483  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [database_test-context.xml]
+23:11:58,936  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [validator_test-context.xml]
+23:11:58,998  INFO GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@5ecfca71: startup date [Sat May 16 23:11:58 CEST 2015]; root of context hierarchy
+23:11:59,549  INFO EmbeddedDatabaseFactory:124 - Creating embedded database 'dataSource'
+23:11:59,612  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:11:59,612  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class org.springframework.jdbc.datasource.SimpleDriverDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:11:59,768  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter#9d14a9' of type [class org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:11:59,784  INFO PropertiesFactoryBean:172 - Loading properties file from class path resource [hibernate_test.properties]
+23:11:59,784  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'hibernateProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:11:59,799  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'hibernateProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:12:00,237  INFO LocalContainerEntityManagerFactoryBean:283 - Building JPA container EntityManagerFactory for persistence unit 'default'
+23:12:00,237  WARN HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:12:00,346  INFO LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+23:12:00,581  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+23:12:00,581  INFO Environment:224 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect, hibernate.show_sql=true, hibernate.bytecode.use_reflection_optimizer=false, hibernate.hbm2ddl.auto=update}
+23:12:00,581  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+23:12:01,436 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@67baaaf5
+23:12:01,436 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@67baaaf5
+23:12:01,451 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@67baaaf5
+23:12:01,451 DEBUG BasicTypeRegistry:146 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@1ba31031
+23:12:01,467 DEBUG BasicTypeRegistry:146 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@3d62a0ba
+23:12:01,467 DEBUG BasicTypeRegistry:146 - Adding type registration yes_no -> org.hibernate.type.YesNoType@4b901dc7
+23:12:01,467 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@154a6b60
+23:12:01,467 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@154a6b60
+23:12:01,467 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@154a6b60
+23:12:01,483 DEBUG BasicTypeRegistry:146 - Adding type registration character -> org.hibernate.type.CharacterType@ba94b54
+23:12:01,483 DEBUG BasicTypeRegistry:146 - Adding type registration char -> org.hibernate.type.CharacterType@ba94b54
+23:12:01,483 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@ba94b54
+23:12:01,483 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@6000d5eb
+23:12:01,483 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@6000d5eb
+23:12:01,483 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@6000d5eb
+23:12:01,483 DEBUG BasicTypeRegistry:146 - Adding type registration integer -> org.hibernate.type.IntegerType@7fe360d1
+23:12:01,483 DEBUG BasicTypeRegistry:146 - Adding type registration int -> org.hibernate.type.IntegerType@7fe360d1
+23:12:01,483 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@7fe360d1
+23:12:01,498 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@35b6d76c
+23:12:01,498 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@35b6d76c
+23:12:01,498 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@35b6d76c
+23:12:01,498 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@3444dd73
+23:12:01,498 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@3444dd73
+23:12:01,498 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@3444dd73
+23:12:01,514 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@2ff7a57c
+23:12:01,514 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@2ff7a57c
+23:12:01,514 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@2ff7a57c
+23:12:01,514 DEBUG BasicTypeRegistry:146 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@31bf4e25
+23:12:01,514 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@31bf4e25
+23:12:01,514 DEBUG BasicTypeRegistry:146 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@701ece7d
+23:12:01,530 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@701ece7d
+23:12:01,530 DEBUG BasicTypeRegistry:146 - Adding type registration string -> org.hibernate.type.StringType@2b68895c
+23:12:01,530 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.String -> org.hibernate.type.StringType@2b68895c
+23:12:01,530 DEBUG BasicTypeRegistry:146 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@726e537c
+23:12:01,530 DEBUG BasicTypeRegistry:146 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@79da0f7
+23:12:01,545 DEBUG BasicTypeRegistry:146 - Adding type registration url -> org.hibernate.type.UrlType@53743c4f
+23:12:01,545 DEBUG BasicTypeRegistry:146 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@53743c4f
+23:12:01,561 DEBUG BasicTypeRegistry:146 - Adding type registration date -> org.hibernate.type.DateType@70eeb555
+23:12:01,561 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@70eeb555
+23:12:01,561 DEBUG BasicTypeRegistry:146 - Adding type registration time -> org.hibernate.type.TimeType@3dbe614e
+23:12:01,576 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@3dbe614e
+23:12:01,576 DEBUG BasicTypeRegistry:146 - Adding type registration timestamp -> org.hibernate.type.TimestampType@2e5015be
+23:12:01,576 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@2e5015be
+23:12:01,576 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@2e5015be
+23:12:01,576 DEBUG BasicTypeRegistry:146 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@627deadb
+23:12:01,576 DEBUG BasicTypeRegistry:146 - Adding type registration calendar -> org.hibernate.type.CalendarType@2413afe5
+23:12:01,576 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2413afe5
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2413afe5
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@2b58ec7e
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration locale -> org.hibernate.type.LocaleType@1295eede
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@1295eede
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration currency -> org.hibernate.type.CurrencyType@7d9331e8
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@7d9331e8
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@60cba833
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@60cba833
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration class -> org.hibernate.type.ClassType@362de08a
+23:12:01,592 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@362de08a
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@6d2efbbd
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@6d2efbbd
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@7015961c
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@3228782a
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration binary -> org.hibernate.type.BinaryType@3b0d579
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration byte[] -> org.hibernate.type.BinaryType@3b0d579
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration [B -> org.hibernate.type.BinaryType@3b0d579
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@407cb427
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@407cb427
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@407cb427
+23:12:01,608 DEBUG BasicTypeRegistry:146 - Adding type registration image -> org.hibernate.type.ImageType@569e6c77
+23:12:01,623 DEBUG BasicTypeRegistry:146 - Adding type registration characters -> org.hibernate.type.CharArrayType@3fde1ed4
+23:12:01,623 DEBUG BasicTypeRegistry:146 - Adding type registration char[] -> org.hibernate.type.CharArrayType@3fde1ed4
+23:12:01,623 DEBUG BasicTypeRegistry:146 - Adding type registration [C -> org.hibernate.type.CharArrayType@3fde1ed4
+23:12:01,623 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@4312905b
+23:12:01,623 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@4312905b
+23:12:01,623 DEBUG BasicTypeRegistry:146 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@4312905b
+23:12:01,623 DEBUG BasicTypeRegistry:146 - Adding type registration text -> org.hibernate.type.TextType@53187c84
+23:12:01,623 DEBUG BasicTypeRegistry:146 - Adding type registration ntext -> org.hibernate.type.NTextType@77ae594f
+23:12:01,639 DEBUG BasicTypeRegistry:146 - Adding type registration blob -> org.hibernate.type.BlobType@29f720a9
+23:12:01,639 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@29f720a9
+23:12:01,639 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@17e7b49c
+23:12:01,655 DEBUG BasicTypeRegistry:146 - Adding type registration clob -> org.hibernate.type.ClobType@66d2774f
+23:12:01,655 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@66d2774f
+23:12:01,655 DEBUG BasicTypeRegistry:146 - Adding type registration nclob -> org.hibernate.type.NClobType@1ac7ff95
+23:12:01,670 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@1ac7ff95
+23:12:01,670 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@5afd566
+23:12:01,670 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@56ba5854
+23:12:01,670 DEBUG BasicTypeRegistry:146 - Adding type registration serializable -> org.hibernate.type.SerializableType@6968055f
+23:12:01,686 DEBUG BasicTypeRegistry:146 - Adding type registration object -> org.hibernate.type.ObjectType@5be6f926
+23:12:01,686 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@5be6f926
+23:12:01,686 DEBUG BasicTypeRegistry:146 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@5039ed28
+23:12:01,686 DEBUG BasicTypeRegistry:146 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@7040d616
+23:12:01,686 DEBUG BasicTypeRegistry:146 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@42b2818f
+23:12:01,686 DEBUG BasicTypeRegistry:146 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@1b64ef8
+23:12:01,686 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@6e0e2eec
+23:12:01,686 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@59bd9c6d
+23:12:01,686 DEBUG BasicTypeRegistry:146 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@fdcda7f
+23:12:01,701 DEBUG BasicTypeRegistry:146 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@10aa9f6a
+23:12:01,748  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+23:12:02,577  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+23:12:03,280  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+23:12:03,358 TRACE TypeFactory:72 - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@21184897
+23:12:03,483  INFO Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+23:12:05,827  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+23:12:05,858 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_distributions drop constraint FK_13qjlh80sla9f4lb4wh7mir64
+23:12:05,858 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_DISTRIBUTIONS
+23:12:05,874 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_distributions drop constraint FK_hwftiydq212k3tux8vvdnotfi
+23:12:05,874 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_DISTRIBUTIONS
+23:12:05,874 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_languages drop constraint FK_f9mvxibowyr2c6kpx0jk26h9o
+23:12:05,874 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_LANGUAGES
+23:12:05,874 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_languages drop constraint FK_cof8p4kmhmiv39gtmpbov07dv
+23:12:05,874 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_LANGUAGES
+23:12:05,874 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_platforms drop constraint FK_4dyhnflou94dystdq7txy5p5d
+23:12:05,874 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_PLATFORMS
+23:12:05,874 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_platforms drop constraint FK_l34xiuii4lmscsusue5x5n99u
+23:12:05,874 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_PLATFORMS
+23:12:05,874 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements drop constraint FK_6caydugpgpu3fdmo5xgnwwcoh
+23:12:05,905 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS
+23:12:05,905 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsArchive drop constraint FK_3c01ng6mt4266u5tpxrlw60gi
+23:12:05,905 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSARCHIVE
+23:12:05,905 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_bm71vrn6x33nwwxxwg1v0s9ij
+23:12:05,905 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:12:05,905 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_3e7sxxgywreduowlwij09yu97
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_alc5xqcwdoqwv7b2cpr04ifpd
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_hlwohpwvklnx7j321kfoakriq
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_distributions drop constraint FK_f2x92fuwm6txg3bcfk5v15pa2
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_DISTRIBUTIONS
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_distributions drop constraint FK_l7lbigo0b3x73nhsu00dxi2a4
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_DISTRIBUTIONS
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_genres drop constraint FK_h5yiejb563cc9bckq1b68mjat
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_GENRES
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_genres drop constraint FK_ea24kf9phn8sxq6oq0wwjex1d
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_GENRES
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_languages drop constraint FK_t4qb5s0e64xudjfelugshrkjk
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_LANGUAGES
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_languages drop constraint FK_9wbct2t0errepltfu2xld65it
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_LANGUAGES
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_platforms drop constraint FK_f9gqvk59g91mau06wa1lot8bt
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_PLATFORMS
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_platforms drop constraint FK_oa4hox4i0mhhes1ueg8ipl2af
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_PLATFORMS
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table categories drop constraint FK_en6687y5stqqtnnxcbmwav4ds
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.CATEGORIES
+23:12:05,920 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_ntaq4yishj3jm7ft81t5iuthv
+23:12:05,920 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_8n7k9oacgxhmnxkgftk0bb3wg
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_mmxnuaclonbkixyix8xe1l6dj
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchangesArchive drop constraint FK_hsr1ildfc7m4wpot58vt1ff80
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGESARCHIVE
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_1yoxtddhv348duxvorggt17jc
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_4hcoyp8lvh4amupb9wpuanmf5
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_rhgxiw4v6lnciv7x4ffkp1cdh
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table pictures drop constraint FK_nl212qxsco4w21kmh0u5dv27i
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.PICTURES
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table pictures drop constraint FK_b7pklcp7uxscs6rw4gom5p2is
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.PICTURES
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table registrations drop constraint FK_cqqdrulaqwcv99iq4e7wj84do
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.REGISTRATIONS
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table resetedPasswords drop constraint FK_ofitj40mqe2jp0798w0b241xh
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.RESETEDPASSWORDS
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table settingsUser drop constraint FK_dvfkjh96s2w850gbuoj1g85ov
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.SETTINGSUSER
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table settingsUser drop constraint FK_soqr59o9ym69n0f8jwy3k9js6
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.SETTINGSUSER
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_resetedPasswords drop constraint FK_hhp39pro656eoarymkhv7srxr
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_RESETEDPASSWORDS
+23:12:05,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_resetedPasswords drop constraint FK_245f0t8vpjm9k0aarlu7d64bt
+23:12:05,936 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_RESETEDPASSWORDS
+23:12:05,952 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_roles drop constraint FK_8pb1p9s34ewlv766uqu90uwub
+23:12:05,952 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_ROLES
+23:12:05,952 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_roles drop constraint FK_2yhghxe7xn7aivvwxfpiwclmd
+23:12:05,952 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_ROLES
+23:12:06,045  INFO SchemaExport:406 - HHH000230: Schema export complete
+23:12:06,202  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'entityManagerFactory' of type [class org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:12:06,202  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'entityManagerFactory' of type [class com.sun.proxy.$Proxy35] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:12:06,202  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'transactionManager' of type [class org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:12:06,264  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:12:06,264  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:12:07,108  INFO GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@5ecfca71: startup date [Sat May 16 23:11:58 CEST 2015]; root of context hierarchy
+23:12:07,124  INFO LocalContainerEntityManagerFactoryBean:441 - Closing JPA EntityManagerFactory for persistence unit 'default'
+23:28:18,605  INFO RegistrationController:67 - Przed wyslaniem maila
+23:28:18,605  INFO RegistrationController:69 - Po wyslaniem maila
+23:28:18,839  INFO ContextRefreshedListener:26 - Wstepne konfigurowanie bazy danych. Dodawanie rol.
+23:28:18,839  INFO ContextRefreshedListener:35 - Nie znaleziono roli ROLE_USER. Dodawanie...
+23:28:18,839  INFO ContextRefreshedListener:35 - Nie znaleziono roli ROLE_ADMIN. Dodawanie...
+23:28:19,214  INFO DefaultTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+23:28:19,245  INFO DefaultTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1799a032, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@66e43eb8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@12d1d6ce, org.springframework.test.context.transaction.TransactionalTestExecutionListener@e6d7809, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@34e39e45]
+23:28:19,386  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [database_test-context.xml]
+23:28:19,839  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [validator_test-context.xml]
+23:28:19,886  INFO GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@255fcb67: startup date [Sat May 16 23:28:19 CEST 2015]; root of context hierarchy
+23:28:20,120  INFO EmbeddedDatabaseFactory:124 - Creating embedded database 'dataSource'
+23:28:20,152  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:20,152  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class org.springframework.jdbc.datasource.SimpleDriverDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:20,214  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter#344dc027' of type [class org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:20,230  INFO PropertiesFactoryBean:172 - Loading properties file from class path resource [hibernate_test.properties]
+23:28:20,230  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'hibernateProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:20,245  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'hibernateProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:20,370  INFO LocalContainerEntityManagerFactoryBean:283 - Building JPA container EntityManagerFactory for persistence unit 'default'
+23:28:20,370  WARN HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:28:20,386  INFO LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+23:28:20,542  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+23:28:20,558  INFO Environment:224 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect, hibernate.show_sql=true, hibernate.bytecode.use_reflection_optimizer=false, hibernate.hbm2ddl.auto=update}
+23:28:20,558  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+23:28:20,902 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@7a3afc13
+23:28:20,902 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@7a3afc13
+23:28:20,902 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@7a3afc13
+23:28:20,917 DEBUG BasicTypeRegistry:146 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@2779d578
+23:28:20,917 DEBUG BasicTypeRegistry:146 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@1cfbe360
+23:28:20,917 DEBUG BasicTypeRegistry:146 - Adding type registration yes_no -> org.hibernate.type.YesNoType@5ee429d7
+23:28:20,917 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@74c5eff0
+23:28:20,917 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@74c5eff0
+23:28:20,917 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@74c5eff0
+23:28:20,917 DEBUG BasicTypeRegistry:146 - Adding type registration character -> org.hibernate.type.CharacterType@5ff8a1df
+23:28:20,933 DEBUG BasicTypeRegistry:146 - Adding type registration char -> org.hibernate.type.CharacterType@5ff8a1df
+23:28:20,933 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@5ff8a1df
+23:28:20,933 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@4c9d7b55
+23:28:20,933 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@4c9d7b55
+23:28:20,933 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@4c9d7b55
+23:28:20,933 DEBUG BasicTypeRegistry:146 - Adding type registration integer -> org.hibernate.type.IntegerType@66d278af
+23:28:20,933 DEBUG BasicTypeRegistry:146 - Adding type registration int -> org.hibernate.type.IntegerType@66d278af
+23:28:20,933 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@66d278af
+23:28:20,933 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@7736177
+23:28:20,949 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@7736177
+23:28:20,949 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@7736177
+23:28:20,949 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@12c5fb80
+23:28:20,949 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@12c5fb80
+23:28:20,949 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@12c5fb80
+23:28:20,949 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@3847619
+23:28:20,949 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@3847619
+23:28:20,949 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@3847619
+23:28:20,964 DEBUG BasicTypeRegistry:146 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@e7643c4
+23:28:20,964 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@e7643c4
+23:28:20,964 DEBUG BasicTypeRegistry:146 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@27ad4dbe
+23:28:20,980 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@27ad4dbe
+23:28:20,980 DEBUG BasicTypeRegistry:146 - Adding type registration string -> org.hibernate.type.StringType@56bcdae1
+23:28:20,980 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.String -> org.hibernate.type.StringType@56bcdae1
+23:28:20,995 DEBUG BasicTypeRegistry:146 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@28e97aef
+23:28:20,995 DEBUG BasicTypeRegistry:146 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@4ad97fde
+23:28:20,995 DEBUG BasicTypeRegistry:146 - Adding type registration url -> org.hibernate.type.UrlType@35b6d76c
+23:28:20,995 DEBUG BasicTypeRegistry:146 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@35b6d76c
+23:28:20,995 DEBUG BasicTypeRegistry:146 - Adding type registration date -> org.hibernate.type.DateType@25778f2c
+23:28:20,995 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@25778f2c
+23:28:21,011 DEBUG BasicTypeRegistry:146 - Adding type registration time -> org.hibernate.type.TimeType@2b91887e
+23:28:21,011 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@2b91887e
+23:28:21,011 DEBUG BasicTypeRegistry:146 - Adding type registration timestamp -> org.hibernate.type.TimestampType@654dbbf6
+23:28:21,011 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@654dbbf6
+23:28:21,011 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@654dbbf6
+23:28:21,011 DEBUG BasicTypeRegistry:146 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@68a3253e
+23:28:21,011 DEBUG BasicTypeRegistry:146 - Adding type registration calendar -> org.hibernate.type.CalendarType@54074e95
+23:28:21,011 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@54074e95
+23:28:21,011 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@54074e95
+23:28:21,027 DEBUG BasicTypeRegistry:146 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@7e9df175
+23:28:21,027 DEBUG BasicTypeRegistry:146 - Adding type registration locale -> org.hibernate.type.LocaleType@5c08b2c2
+23:28:21,027 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@5c08b2c2
+23:28:21,027 DEBUG BasicTypeRegistry:146 - Adding type registration currency -> org.hibernate.type.CurrencyType@4f03738b
+23:28:21,027 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@4f03738b
+23:28:21,027 DEBUG BasicTypeRegistry:146 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@7f994081
+23:28:21,027 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@7f994081
+23:28:21,027 DEBUG BasicTypeRegistry:146 - Adding type registration class -> org.hibernate.type.ClassType@62858024
+23:28:21,027 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@62858024
+23:28:21,042 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@1afb77dd
+23:28:21,042 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@1afb77dd
+23:28:21,042 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@51ed29bb
+23:28:21,042 DEBUG BasicTypeRegistry:146 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@3fcae63b
+23:28:21,042 DEBUG BasicTypeRegistry:146 - Adding type registration binary -> org.hibernate.type.BinaryType@8c6ba04
+23:28:21,042 DEBUG BasicTypeRegistry:146 - Adding type registration byte[] -> org.hibernate.type.BinaryType@8c6ba04
+23:28:21,042 DEBUG BasicTypeRegistry:146 - Adding type registration [B -> org.hibernate.type.BinaryType@8c6ba04
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@28ad5127
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@28ad5127
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@28ad5127
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration image -> org.hibernate.type.ImageType@31753a5a
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration characters -> org.hibernate.type.CharArrayType@7d9331e8
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration char[] -> org.hibernate.type.CharArrayType@7d9331e8
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration [C -> org.hibernate.type.CharArrayType@7d9331e8
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@26ba91a1
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@26ba91a1
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@26ba91a1
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration text -> org.hibernate.type.TextType@7df09fcf
+23:28:21,058 DEBUG BasicTypeRegistry:146 - Adding type registration ntext -> org.hibernate.type.NTextType@30d82394
+23:28:21,074 DEBUG BasicTypeRegistry:146 - Adding type registration blob -> org.hibernate.type.BlobType@1e955d29
+23:28:21,074 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@1e955d29
+23:28:21,074 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@70f0acec
+23:28:21,074 DEBUG BasicTypeRegistry:146 - Adding type registration clob -> org.hibernate.type.ClobType@8a8ad40
+23:28:21,089 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@8a8ad40
+23:28:21,089 DEBUG BasicTypeRegistry:146 - Adding type registration nclob -> org.hibernate.type.NClobType@179c9a9b
+23:28:21,089 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@179c9a9b
+23:28:21,089 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@7207ca7e
+23:28:21,089 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@58714e00
+23:28:21,089 DEBUG BasicTypeRegistry:146 - Adding type registration serializable -> org.hibernate.type.SerializableType@70dfa475
+23:28:21,105 DEBUG BasicTypeRegistry:146 - Adding type registration object -> org.hibernate.type.ObjectType@4f2fe2d1
+23:28:21,105 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@4f2fe2d1
+23:28:21,105 DEBUG BasicTypeRegistry:146 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@6c6cd80f
+23:28:21,105 DEBUG BasicTypeRegistry:146 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@5637df07
+23:28:21,105 DEBUG BasicTypeRegistry:146 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@3e51d494
+23:28:21,105 DEBUG BasicTypeRegistry:146 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@311d2f68
+23:28:21,105 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@9d0a3e
+23:28:21,120 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@1811587b
+23:28:21,120 DEBUG BasicTypeRegistry:146 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@405c9cef
+23:28:21,120 DEBUG BasicTypeRegistry:146 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@3aff2f16
+23:28:21,167  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+23:28:21,714  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+23:28:22,055  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+23:28:22,102 TRACE TypeFactory:72 - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@3dc4baf4
+23:28:22,152  INFO Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+23:28:23,218  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_distributions drop constraint FK_13qjlh80sla9f4lb4wh7mir64
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_DISTRIBUTIONS
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_distributions drop constraint FK_hwftiydq212k3tux8vvdnotfi
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_DISTRIBUTIONS
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_languages drop constraint FK_f9mvxibowyr2c6kpx0jk26h9o
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_LANGUAGES
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_languages drop constraint FK_cof8p4kmhmiv39gtmpbov07dv
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_LANGUAGES
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_platforms drop constraint FK_4dyhnflou94dystdq7txy5p5d
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_PLATFORMS
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_platforms drop constraint FK_l34xiuii4lmscsusue5x5n99u
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_PLATFORMS
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements drop constraint FK_6caydugpgpu3fdmo5xgnwwcoh
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsArchive drop constraint FK_3c01ng6mt4266u5tpxrlw60gi
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSARCHIVE
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_bm71vrn6x33nwwxxwg1v0s9ij
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_3e7sxxgywreduowlwij09yu97
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:28:23,233 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_alc5xqcwdoqwv7b2cpr04ifpd
+23:28:23,233 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_hlwohpwvklnx7j321kfoakriq
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_distributions drop constraint FK_f2x92fuwm6txg3bcfk5v15pa2
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_DISTRIBUTIONS
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_distributions drop constraint FK_l7lbigo0b3x73nhsu00dxi2a4
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_DISTRIBUTIONS
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_genres drop constraint FK_h5yiejb563cc9bckq1b68mjat
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_GENRES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_genres drop constraint FK_ea24kf9phn8sxq6oq0wwjex1d
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_GENRES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_languages drop constraint FK_t4qb5s0e64xudjfelugshrkjk
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_LANGUAGES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_languages drop constraint FK_9wbct2t0errepltfu2xld65it
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_LANGUAGES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_platforms drop constraint FK_f9gqvk59g91mau06wa1lot8bt
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_PLATFORMS
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_platforms drop constraint FK_oa4hox4i0mhhes1ueg8ipl2af
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_PLATFORMS
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table categories drop constraint FK_en6687y5stqqtnnxcbmwav4ds
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.CATEGORIES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_ntaq4yishj3jm7ft81t5iuthv
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_8n7k9oacgxhmnxkgftk0bb3wg
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_mmxnuaclonbkixyix8xe1l6dj
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchangesArchive drop constraint FK_hsr1ildfc7m4wpot58vt1ff80
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGESARCHIVE
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_1yoxtddhv348duxvorggt17jc
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_4hcoyp8lvh4amupb9wpuanmf5
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_rhgxiw4v6lnciv7x4ffkp1cdh
+23:28:23,249 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:28:23,249 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table pictures drop constraint FK_nl212qxsco4w21kmh0u5dv27i
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.PICTURES
+23:28:23,265 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table pictures drop constraint FK_b7pklcp7uxscs6rw4gom5p2is
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.PICTURES
+23:28:23,265 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table registrations drop constraint FK_cqqdrulaqwcv99iq4e7wj84do
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.REGISTRATIONS
+23:28:23,265 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table resetedPasswords drop constraint FK_ofitj40mqe2jp0798w0b241xh
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.RESETEDPASSWORDS
+23:28:23,265 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table settingsUser drop constraint FK_dvfkjh96s2w850gbuoj1g85ov
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.SETTINGSUSER
+23:28:23,265 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table settingsUser drop constraint FK_soqr59o9ym69n0f8jwy3k9js6
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.SETTINGSUSER
+23:28:23,265 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_resetedPasswords drop constraint FK_hhp39pro656eoarymkhv7srxr
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_RESETEDPASSWORDS
+23:28:23,265 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_resetedPasswords drop constraint FK_245f0t8vpjm9k0aarlu7d64bt
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_RESETEDPASSWORDS
+23:28:23,265 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_roles drop constraint FK_8pb1p9s34ewlv766uqu90uwub
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_ROLES
+23:28:23,265 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_roles drop constraint FK_2yhghxe7xn7aivvwxfpiwclmd
+23:28:23,265 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_ROLES
+23:28:23,327  INFO SchemaExport:406 - HHH000230: Schema export complete
+23:28:23,437  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'entityManagerFactory' of type [class org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:23,437  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'entityManagerFactory' of type [class com.sun.proxy.$Proxy34] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:23,437  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'transactionManager' of type [class org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:23,468  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:23,468  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:23,968  INFO GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@255fcb67: startup date [Sat May 16 23:28:19 CEST 2015]; root of context hierarchy
+23:28:23,968  INFO LocalContainerEntityManagerFactoryBean:441 - Closing JPA EntityManagerFactory for persistence unit 'default'
+23:28:36,707  INFO RegistrationController:67 - Przed wyslaniem maila
+23:28:36,722  INFO RegistrationController:69 - Po wyslaniem maila
+23:28:36,878  INFO ContextRefreshedListener:26 - Wstepne konfigurowanie bazy danych. Dodawanie rol.
+23:28:36,878  INFO ContextRefreshedListener:35 - Nie znaleziono roli ROLE_USER. Dodawanie...
+23:28:36,878  INFO ContextRefreshedListener:35 - Nie znaleziono roli ROLE_ADMIN. Dodawanie...
+23:28:37,160  INFO DefaultTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+23:28:37,207  INFO DefaultTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@73cd0798, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@19adc78d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@60080726, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2f0d810b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1f93114f]
+23:28:37,342  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [database_test-context.xml]
+23:28:37,732  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [validator_test-context.xml]
+23:28:37,764  INFO GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@ee8bd13: startup date [Sat May 16 23:28:37 CEST 2015]; root of context hierarchy
+23:28:38,014  INFO EmbeddedDatabaseFactory:124 - Creating embedded database 'dataSource'
+23:28:38,014  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:38,014  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class org.springframework.jdbc.datasource.SimpleDriverDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:38,123  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter#5d42b5bf' of type [class org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:38,139  INFO PropertiesFactoryBean:172 - Loading properties file from class path resource [hibernate_test.properties]
+23:28:38,139  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'hibernateProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:38,154  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'hibernateProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:38,248  INFO LocalContainerEntityManagerFactoryBean:283 - Building JPA container EntityManagerFactory for persistence unit 'default'
+23:28:38,248  WARN HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:28:38,264  INFO LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+23:28:38,467  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+23:28:38,467  INFO Environment:224 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect, hibernate.show_sql=true, hibernate.bytecode.use_reflection_optimizer=false, hibernate.hbm2ddl.auto=update}
+23:28:38,467  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+23:28:38,826 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@4cc85072
+23:28:38,826 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@4cc85072
+23:28:38,826 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@4cc85072
+23:28:38,826 DEBUG BasicTypeRegistry:146 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@3eccc1b3
+23:28:38,826 DEBUG BasicTypeRegistry:146 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@7c7b6fc9
+23:28:38,826 DEBUG BasicTypeRegistry:146 - Adding type registration yes_no -> org.hibernate.type.YesNoType@6af00092
+23:28:38,842 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@16fdb3e9
+23:28:38,842 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@16fdb3e9
+23:28:38,842 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@16fdb3e9
+23:28:38,842 DEBUG BasicTypeRegistry:146 - Adding type registration character -> org.hibernate.type.CharacterType@15a8b092
+23:28:38,842 DEBUG BasicTypeRegistry:146 - Adding type registration char -> org.hibernate.type.CharacterType@15a8b092
+23:28:38,842 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@15a8b092
+23:28:38,842 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@4a96405e
+23:28:38,842 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@4a96405e
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@4a96405e
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration integer -> org.hibernate.type.IntegerType@2b33796b
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration int -> org.hibernate.type.IntegerType@2b33796b
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@2b33796b
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@251c086c
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@251c086c
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@251c086c
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@a3e0244
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@a3e0244
+23:28:38,857 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@a3e0244
+23:28:38,873 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@3f782da8
+23:28:38,873 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@3f782da8
+23:28:38,873 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@3f782da8
+23:28:38,873 DEBUG BasicTypeRegistry:146 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@3443a7af
+23:28:38,873 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@3443a7af
+23:28:38,873 DEBUG BasicTypeRegistry:146 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@6def0c9d
+23:28:38,889 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@6def0c9d
+23:28:38,889 DEBUG BasicTypeRegistry:146 - Adding type registration string -> org.hibernate.type.StringType@23b1293f
+23:28:38,889 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.String -> org.hibernate.type.StringType@23b1293f
+23:28:38,904 DEBUG BasicTypeRegistry:146 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@4ad97fde
+23:28:38,904 DEBUG BasicTypeRegistry:146 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@2cd83560
+23:28:38,904 DEBUG BasicTypeRegistry:146 - Adding type registration url -> org.hibernate.type.UrlType@3859820d
+23:28:38,904 DEBUG BasicTypeRegistry:146 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@3859820d
+23:28:38,904 DEBUG BasicTypeRegistry:146 - Adding type registration date -> org.hibernate.type.DateType@4258426
+23:28:38,904 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@4258426
+23:28:38,920 DEBUG BasicTypeRegistry:146 - Adding type registration time -> org.hibernate.type.TimeType@30fd4204
+23:28:38,920 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@30fd4204
+23:28:38,920 DEBUG BasicTypeRegistry:146 - Adding type registration timestamp -> org.hibernate.type.TimestampType@31bf4e25
+23:28:38,920 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@31bf4e25
+23:28:38,920 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@31bf4e25
+23:28:38,920 DEBUG BasicTypeRegistry:146 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@386fd9da
+23:28:38,935 DEBUG BasicTypeRegistry:146 - Adding type registration calendar -> org.hibernate.type.CalendarType@2106c1fb
+23:28:38,935 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2106c1fb
+23:28:38,935 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2106c1fb
+23:28:38,935 DEBUG BasicTypeRegistry:146 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@4ac1a5fe
+23:28:38,935 DEBUG BasicTypeRegistry:146 - Adding type registration locale -> org.hibernate.type.LocaleType@7144e6d4
+23:28:38,935 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@7144e6d4
+23:28:38,935 DEBUG BasicTypeRegistry:146 - Adding type registration currency -> org.hibernate.type.CurrencyType@1de6678d
+23:28:38,935 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@1de6678d
+23:28:38,951 DEBUG BasicTypeRegistry:146 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@2e5015be
+23:28:38,951 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@2e5015be
+23:28:38,951 DEBUG BasicTypeRegistry:146 - Adding type registration class -> org.hibernate.type.ClassType@5039f4d3
+23:28:38,951 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@5039f4d3
+23:28:38,951 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@78d16a7d
+23:28:38,951 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@78d16a7d
+23:28:38,951 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@76150f6f
+23:28:38,951 DEBUG BasicTypeRegistry:146 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@5b4aa17
+23:28:38,951 DEBUG BasicTypeRegistry:146 - Adding type registration binary -> org.hibernate.type.BinaryType@78267233
+23:28:38,967 DEBUG BasicTypeRegistry:146 - Adding type registration byte[] -> org.hibernate.type.BinaryType@78267233
+23:28:38,967 DEBUG BasicTypeRegistry:146 - Adding type registration [B -> org.hibernate.type.BinaryType@78267233
+23:28:38,967 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@f0ade81
+23:28:38,967 DEBUG BasicTypeRegistry:146 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@f0ade81
+23:28:38,967 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@f0ade81
+23:28:38,967 DEBUG BasicTypeRegistry:146 - Adding type registration image -> org.hibernate.type.ImageType@48f3b0e2
+23:28:38,982 DEBUG BasicTypeRegistry:146 - Adding type registration characters -> org.hibernate.type.CharArrayType@571fe5db
+23:28:38,982 DEBUG BasicTypeRegistry:146 - Adding type registration char[] -> org.hibernate.type.CharArrayType@571fe5db
+23:28:38,982 DEBUG BasicTypeRegistry:146 - Adding type registration [C -> org.hibernate.type.CharArrayType@571fe5db
+23:28:38,982 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@28ee5194
+23:28:38,982 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@28ee5194
+23:28:38,982 DEBUG BasicTypeRegistry:146 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@28ee5194
+23:28:38,982 DEBUG BasicTypeRegistry:146 - Adding type registration text -> org.hibernate.type.TextType@30d82394
+23:28:38,982 DEBUG BasicTypeRegistry:146 - Adding type registration ntext -> org.hibernate.type.NTextType@4ae85cdf
+23:28:38,998 DEBUG BasicTypeRegistry:146 - Adding type registration blob -> org.hibernate.type.BlobType@3e403c23
+23:28:38,998 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@3e403c23
+23:28:38,998 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@292ade54
+23:28:39,017 DEBUG BasicTypeRegistry:146 - Adding type registration clob -> org.hibernate.type.ClobType@71d6f7a2
+23:28:39,018 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@71d6f7a2
+23:28:39,024 DEBUG BasicTypeRegistry:146 - Adding type registration nclob -> org.hibernate.type.NClobType@7e27f247
+23:28:39,025 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@7e27f247
+23:28:39,027 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@56a279c
+23:28:39,029 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@1f814cc5
+23:28:39,032 DEBUG BasicTypeRegistry:146 - Adding type registration serializable -> org.hibernate.type.SerializableType@c6a76d
+23:28:39,040 DEBUG BasicTypeRegistry:146 - Adding type registration object -> org.hibernate.type.ObjectType@106f138e
+23:28:39,043 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@106f138e
+23:28:39,045 DEBUG BasicTypeRegistry:146 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@1ac7ff95
+23:28:39,047 DEBUG BasicTypeRegistry:146 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@432fec
+23:28:39,048 DEBUG BasicTypeRegistry:146 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@476c6b9c
+23:28:39,050 DEBUG BasicTypeRegistry:146 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@b3fbd77
+23:28:39,051 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@5ae31e74
+23:28:39,052 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@45a27493
+23:28:39,053 DEBUG BasicTypeRegistry:146 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@863e6a1
+23:28:39,055 DEBUG BasicTypeRegistry:146 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@63fd1f47
+23:28:39,104  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+23:28:39,799  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+23:28:40,237  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+23:28:40,284 TRACE TypeFactory:72 - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@4b92722c
+23:28:40,330  INFO Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+23:28:41,565  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+23:28:41,565 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_distributions drop constraint FK_13qjlh80sla9f4lb4wh7mir64
+23:28:41,565 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_DISTRIBUTIONS
+23:28:41,565 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_distributions drop constraint FK_hwftiydq212k3tux8vvdnotfi
+23:28:41,565 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_DISTRIBUTIONS
+23:28:41,565 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_languages drop constraint FK_f9mvxibowyr2c6kpx0jk26h9o
+23:28:41,565 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_LANGUAGES
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_languages drop constraint FK_cof8p4kmhmiv39gtmpbov07dv
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_LANGUAGES
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_platforms drop constraint FK_4dyhnflou94dystdq7txy5p5d
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_PLATFORMS
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_platforms drop constraint FK_l34xiuii4lmscsusue5x5n99u
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_PLATFORMS
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements drop constraint FK_6caydugpgpu3fdmo5xgnwwcoh
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsArchive drop constraint FK_3c01ng6mt4266u5tpxrlw60gi
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSARCHIVE
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_bm71vrn6x33nwwxxwg1v0s9ij
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_3e7sxxgywreduowlwij09yu97
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_alc5xqcwdoqwv7b2cpr04ifpd
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_hlwohpwvklnx7j321kfoakriq
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_distributions drop constraint FK_f2x92fuwm6txg3bcfk5v15pa2
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_DISTRIBUTIONS
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_distributions drop constraint FK_l7lbigo0b3x73nhsu00dxi2a4
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_DISTRIBUTIONS
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_genres drop constraint FK_h5yiejb563cc9bckq1b68mjat
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_GENRES
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_genres drop constraint FK_ea24kf9phn8sxq6oq0wwjex1d
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_GENRES
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_languages drop constraint FK_t4qb5s0e64xudjfelugshrkjk
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_LANGUAGES
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_languages drop constraint FK_9wbct2t0errepltfu2xld65it
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_LANGUAGES
+23:28:41,580 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_platforms drop constraint FK_f9gqvk59g91mau06wa1lot8bt
+23:28:41,580 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_PLATFORMS
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_platforms drop constraint FK_oa4hox4i0mhhes1ueg8ipl2af
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_PLATFORMS
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table categories drop constraint FK_en6687y5stqqtnnxcbmwav4ds
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.CATEGORIES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_ntaq4yishj3jm7ft81t5iuthv
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_8n7k9oacgxhmnxkgftk0bb3wg
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_mmxnuaclonbkixyix8xe1l6dj
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchangesArchive drop constraint FK_hsr1ildfc7m4wpot58vt1ff80
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGESARCHIVE
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_1yoxtddhv348duxvorggt17jc
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_4hcoyp8lvh4amupb9wpuanmf5
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_rhgxiw4v6lnciv7x4ffkp1cdh
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table pictures drop constraint FK_nl212qxsco4w21kmh0u5dv27i
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.PICTURES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table pictures drop constraint FK_b7pklcp7uxscs6rw4gom5p2is
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.PICTURES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table registrations drop constraint FK_cqqdrulaqwcv99iq4e7wj84do
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.REGISTRATIONS
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table resetedPasswords drop constraint FK_ofitj40mqe2jp0798w0b241xh
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.RESETEDPASSWORDS
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table settingsUser drop constraint FK_dvfkjh96s2w850gbuoj1g85ov
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.SETTINGSUSER
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table settingsUser drop constraint FK_soqr59o9ym69n0f8jwy3k9js6
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.SETTINGSUSER
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_resetedPasswords drop constraint FK_hhp39pro656eoarymkhv7srxr
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_RESETEDPASSWORDS
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_resetedPasswords drop constraint FK_245f0t8vpjm9k0aarlu7d64bt
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_RESETEDPASSWORDS
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_roles drop constraint FK_8pb1p9s34ewlv766uqu90uwub
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_ROLES
+23:28:41,596 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_roles drop constraint FK_2yhghxe7xn7aivvwxfpiwclmd
+23:28:41,596 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_ROLES
+23:28:41,682  INFO SchemaExport:406 - HHH000230: Schema export complete
+23:28:41,807  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'entityManagerFactory' of type [class org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:41,807  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'entityManagerFactory' of type [class com.sun.proxy.$Proxy35] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:41,807  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'transactionManager' of type [class org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:41,838  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:41,854  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:28:42,286  INFO GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@ee8bd13: startup date [Sat May 16 23:28:37 CEST 2015]; root of context hierarchy
+23:28:42,287  INFO LocalContainerEntityManagerFactoryBean:441 - Closing JPA EntityManagerFactory for persistence unit 'default'
+23:31:54,408  INFO RegistrationController:67 - Przed wyslaniem maila
+23:31:54,412  INFO RegistrationController:69 - Po wyslaniem maila
+23:31:54,555  INFO ContextRefreshedListener:26 - Wstepne konfigurowanie bazy danych. Dodawanie rol.
+23:31:54,555  INFO ContextRefreshedListener:35 - Nie znaleziono roli ROLE_USER. Dodawanie...
+23:31:54,555  INFO ContextRefreshedListener:35 - Nie znaleziono roli ROLE_ADMIN. Dodawanie...
+23:31:54,836  INFO DefaultTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+23:31:54,883  INFO DefaultTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6c3a6465, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6d955a65, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6861d517, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6eed0e8a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d55beeb]
+23:31:55,008  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [database_test-context.xml]
+23:31:55,398  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [validator_test-context.xml]
+23:31:55,430  INFO GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@735b81bd: startup date [Sat May 16 23:31:55 CEST 2015]; root of context hierarchy
+23:31:55,680  INFO EmbeddedDatabaseFactory:124 - Creating embedded database 'dataSource'
+23:31:55,680  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:55,680  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class org.springframework.jdbc.datasource.SimpleDriverDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:55,758  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter#426e95e9' of type [class org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:55,773  INFO PropertiesFactoryBean:172 - Loading properties file from class path resource [hibernate_test.properties]
+23:31:55,773  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'hibernateProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:55,773  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'hibernateProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:55,866  INFO LocalContainerEntityManagerFactoryBean:283 - Building JPA container EntityManagerFactory for persistence unit 'default'
+23:31:55,866  WARN HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:31:55,897  INFO LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+23:31:56,084  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+23:31:56,100  INFO Environment:224 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect, hibernate.show_sql=true, hibernate.bytecode.use_reflection_optimizer=false, hibernate.hbm2ddl.auto=update}
+23:31:56,100  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+23:31:56,381 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@43872c49
+23:31:56,381 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@43872c49
+23:31:56,381 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@43872c49
+23:31:56,381 DEBUG BasicTypeRegistry:146 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@7a3afc13
+23:31:56,397 DEBUG BasicTypeRegistry:146 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@84e9850
+23:31:56,397 DEBUG BasicTypeRegistry:146 - Adding type registration yes_no -> org.hibernate.type.YesNoType@74c0eefa
+23:31:56,397 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@5efe07b8
+23:31:56,397 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@5efe07b8
+23:31:56,397 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@5efe07b8
+23:31:56,397 DEBUG BasicTypeRegistry:146 - Adding type registration character -> org.hibernate.type.CharacterType@2747ebcb
+23:31:56,397 DEBUG BasicTypeRegistry:146 - Adding type registration char -> org.hibernate.type.CharacterType@2747ebcb
+23:31:56,397 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@2747ebcb
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@355e0f92
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@355e0f92
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@355e0f92
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration integer -> org.hibernate.type.IntegerType@36d349b8
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration int -> org.hibernate.type.IntegerType@36d349b8
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@36d349b8
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@2b938c68
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@2b938c68
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@2b938c68
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@37e963dd
+23:31:56,413 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@37e963dd
+23:31:56,428 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@37e963dd
+23:31:56,428 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@7e6ecfd2
+23:31:56,428 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@7e6ecfd2
+23:31:56,428 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@7e6ecfd2
+23:31:56,428 DEBUG BasicTypeRegistry:146 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@acf6a17
+23:31:56,428 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@acf6a17
+23:31:56,428 DEBUG BasicTypeRegistry:146 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@72b7f789
+23:31:56,428 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@72b7f789
+23:31:56,444 DEBUG BasicTypeRegistry:146 - Adding type registration string -> org.hibernate.type.StringType@33fba86
+23:31:56,444 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.String -> org.hibernate.type.StringType@33fba86
+23:31:56,459 DEBUG BasicTypeRegistry:146 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@56bcdae1
+23:31:56,459 DEBUG BasicTypeRegistry:146 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@23b1293f
+23:31:56,459 DEBUG BasicTypeRegistry:146 - Adding type registration url -> org.hibernate.type.UrlType@4ff7cf08
+23:31:56,459 DEBUG BasicTypeRegistry:146 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@4ff7cf08
+23:31:56,459 DEBUG BasicTypeRegistry:146 - Adding type registration date -> org.hibernate.type.DateType@1036e92b
+23:31:56,459 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@1036e92b
+23:31:56,459 DEBUG BasicTypeRegistry:146 - Adding type registration time -> org.hibernate.type.TimeType@488f7b56
+23:31:56,459 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@488f7b56
+23:31:56,475 DEBUG BasicTypeRegistry:146 - Adding type registration timestamp -> org.hibernate.type.TimestampType@2058690e
+23:31:56,475 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@2058690e
+23:31:56,475 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@2058690e
+23:31:56,475 DEBUG BasicTypeRegistry:146 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@75648bd9
+23:31:56,475 DEBUG BasicTypeRegistry:146 - Adding type registration calendar -> org.hibernate.type.CalendarType@152cecd2
+23:31:56,475 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@152cecd2
+23:31:56,475 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@152cecd2
+23:31:56,475 DEBUG BasicTypeRegistry:146 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@565d53ac
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration locale -> org.hibernate.type.LocaleType@6c708781
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@6c708781
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration currency -> org.hibernate.type.CurrencyType@32e89e0
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@32e89e0
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@47773ae3
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@47773ae3
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration class -> org.hibernate.type.ClassType@7cdf6322
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@7cdf6322
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@b54efe5
+23:31:56,491 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@b54efe5
+23:31:56,506 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@3b576c8b
+23:31:56,506 DEBUG BasicTypeRegistry:146 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@25b9eece
+23:31:56,506 DEBUG BasicTypeRegistry:146 - Adding type registration binary -> org.hibernate.type.BinaryType@6d977796
+23:31:56,506 DEBUG BasicTypeRegistry:146 - Adding type registration byte[] -> org.hibernate.type.BinaryType@6d977796
+23:31:56,506 DEBUG BasicTypeRegistry:146 - Adding type registration [B -> org.hibernate.type.BinaryType@6d977796
+23:31:56,506 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@4a8f5018
+23:31:56,506 DEBUG BasicTypeRegistry:146 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@4a8f5018
+23:31:56,506 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@4a8f5018
+23:31:56,522 DEBUG BasicTypeRegistry:146 - Adding type registration image -> org.hibernate.type.ImageType@20ae6262
+23:31:56,522 DEBUG BasicTypeRegistry:146 - Adding type registration characters -> org.hibernate.type.CharArrayType@4b47d270
+23:31:56,522 DEBUG BasicTypeRegistry:146 - Adding type registration char[] -> org.hibernate.type.CharArrayType@4b47d270
+23:31:56,522 DEBUG BasicTypeRegistry:146 - Adding type registration [C -> org.hibernate.type.CharArrayType@4b47d270
+23:31:56,522 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@79daec48
+23:31:56,522 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@79daec48
+23:31:56,522 DEBUG BasicTypeRegistry:146 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@79daec48
+23:31:56,522 DEBUG BasicTypeRegistry:146 - Adding type registration text -> org.hibernate.type.TextType@13c02dc4
+23:31:56,522 DEBUG BasicTypeRegistry:146 - Adding type registration ntext -> org.hibernate.type.NTextType@4fb29a78
+23:31:56,538 DEBUG BasicTypeRegistry:146 - Adding type registration blob -> org.hibernate.type.BlobType@5c23f9fd
+23:31:56,538 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@5c23f9fd
+23:31:56,538 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@74bf36b
+23:31:56,538 DEBUG BasicTypeRegistry:146 - Adding type registration clob -> org.hibernate.type.ClobType@765065dc
+23:31:56,553 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@765065dc
+23:31:56,553 DEBUG BasicTypeRegistry:146 - Adding type registration nclob -> org.hibernate.type.NClobType@5f327524
+23:31:56,553 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@5f327524
+23:31:56,553 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@75bb4e12
+23:31:56,553 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@61039926
+23:31:56,553 DEBUG BasicTypeRegistry:146 - Adding type registration serializable -> org.hibernate.type.SerializableType@17e7b49c
+23:31:56,569 DEBUG BasicTypeRegistry:146 - Adding type registration object -> org.hibernate.type.ObjectType@9654f70
+23:31:56,569 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@9654f70
+23:31:56,569 DEBUG BasicTypeRegistry:146 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@3c62fbb8
+23:31:56,569 DEBUG BasicTypeRegistry:146 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@39f818fa
+23:31:56,569 DEBUG BasicTypeRegistry:146 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@50d42ff4
+23:31:56,569 DEBUG BasicTypeRegistry:146 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@b383aab
+23:31:56,584 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@9a5c77d
+23:31:56,584 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@3805fd37
+23:31:56,584 DEBUG BasicTypeRegistry:146 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@3c5a5a3d
+23:31:56,584 DEBUG BasicTypeRegistry:146 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@106f138e
+23:31:56,616  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+23:31:57,225  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+23:31:57,569  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+23:31:57,600 TRACE TypeFactory:72 - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@5e26ccc1
+23:31:57,647  INFO Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+23:31:58,788  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+23:31:58,788 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_distributions drop constraint FK_13qjlh80sla9f4lb4wh7mir64
+23:31:58,788 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_DISTRIBUTIONS
+23:31:58,788 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_distributions drop constraint FK_hwftiydq212k3tux8vvdnotfi
+23:31:58,788 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_DISTRIBUTIONS
+23:31:58,788 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_languages drop constraint FK_f9mvxibowyr2c6kpx0jk26h9o
+23:31:58,788 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_LANGUAGES
+23:31:58,788 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_languages drop constraint FK_cof8p4kmhmiv39gtmpbov07dv
+23:31:58,788 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_LANGUAGES
+23:31:58,788 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_platforms drop constraint FK_4dyhnflou94dystdq7txy5p5d
+23:31:58,788 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_PLATFORMS
+23:31:58,788 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisement_platforms drop constraint FK_l34xiuii4lmscsusue5x5n99u
+23:31:58,788 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENT_PLATFORMS
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements drop constraint FK_6caydugpgpu3fdmo5xgnwwcoh
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsArchive drop constraint FK_3c01ng6mt4266u5tpxrlw60gi
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSARCHIVE
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_bm71vrn6x33nwwxxwg1v0s9ij
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_3e7sxxgywreduowlwij09yu97
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_alc5xqcwdoqwv7b2cpr04ifpd
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisementsData drop constraint FK_hlwohpwvklnx7j321kfoakriq
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTSDATA
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_distributions drop constraint FK_f2x92fuwm6txg3bcfk5v15pa2
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_DISTRIBUTIONS
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_distributions drop constraint FK_l7lbigo0b3x73nhsu00dxi2a4
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_DISTRIBUTIONS
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_genres drop constraint FK_h5yiejb563cc9bckq1b68mjat
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_GENRES
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_genres drop constraint FK_ea24kf9phn8sxq6oq0wwjex1d
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_GENRES
+23:31:58,803 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_languages drop constraint FK_t4qb5s0e64xudjfelugshrkjk
+23:31:58,803 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_LANGUAGES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_languages drop constraint FK_9wbct2t0errepltfu2xld65it
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_LANGUAGES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_platforms drop constraint FK_f9gqvk59g91mau06wa1lot8bt
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_PLATFORMS
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table advertisements_platforms drop constraint FK_oa4hox4i0mhhes1ueg8ipl2af
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.ADVERTISEMENTS_PLATFORMS
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table categories drop constraint FK_en6687y5stqqtnnxcbmwav4ds
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.CATEGORIES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_ntaq4yishj3jm7ft81t5iuthv
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_8n7k9oacgxhmnxkgftk0bb3wg
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchanges drop constraint FK_mmxnuaclonbkixyix8xe1l6dj
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table exchangesArchive drop constraint FK_hsr1ildfc7m4wpot58vt1ff80
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.EXCHANGESARCHIVE
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_1yoxtddhv348duxvorggt17jc
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_4hcoyp8lvh4amupb9wpuanmf5
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table messages drop constraint FK_rhgxiw4v6lnciv7x4ffkp1cdh
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.MESSAGES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table pictures drop constraint FK_nl212qxsco4w21kmh0u5dv27i
+23:31:58,819 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.PICTURES
+23:31:58,819 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table pictures drop constraint FK_b7pklcp7uxscs6rw4gom5p2is
+23:31:58,835 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.PICTURES
+23:31:58,835 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table registrations drop constraint FK_cqqdrulaqwcv99iq4e7wj84do
+23:31:58,835 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.REGISTRATIONS
+23:31:58,835 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table resetedPasswords drop constraint FK_ofitj40mqe2jp0798w0b241xh
+23:31:58,835 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.RESETEDPASSWORDS
+23:31:58,835 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table settingsUser drop constraint FK_dvfkjh96s2w850gbuoj1g85ov
+23:31:58,835 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.SETTINGSUSER
+23:31:58,835 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table settingsUser drop constraint FK_soqr59o9ym69n0f8jwy3k9js6
+23:31:58,835 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.SETTINGSUSER
+23:31:58,835 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_resetedPasswords drop constraint FK_hhp39pro656eoarymkhv7srxr
+23:31:58,835 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_RESETEDPASSWORDS
+23:31:58,835 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_resetedPasswords drop constraint FK_245f0t8vpjm9k0aarlu7d64bt
+23:31:58,835 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_RESETEDPASSWORDS
+23:31:58,835 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_roles drop constraint FK_8pb1p9s34ewlv766uqu90uwub
+23:31:58,835 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_ROLES
+23:31:58,835 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table users_roles drop constraint FK_2yhghxe7xn7aivvwxfpiwclmd
+23:31:58,835 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.USERS_ROLES
+23:31:58,928  INFO SchemaExport:406 - HHH000230: Schema export complete
+23:31:59,022  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'entityManagerFactory' of type [class org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:59,038  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'entityManagerFactory' of type [class com.sun.proxy.$Proxy34] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:59,038  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'transactionManager' of type [class org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:59,069  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:59,069  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:31:59,428  INFO GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@735b81bd: startup date [Sat May 16 23:31:55 CEST 2015]; root of context hierarchy
+23:31:59,428  INFO LocalContainerEntityManagerFactoryBean:441 - Closing JPA EntityManagerFactory for persistence unit 'default'
+18:35:48,117  INFO RegistrationController:64 - Przed wyslaniem maila
+18:35:48,302  INFO RegistrationController:66 - Po wyslaniem maila
+18:35:48,780  INFO ContextRefreshedListener:42 - Wstepne konfigurowanie bazy danych. Dodawanie rol.
+18:35:48,780  INFO ContextRefreshedListener:83 - Nie znaleziono roli ROLE_USER. Dodawanie...
+18:35:48,781  INFO ContextRefreshedListener:83 - Nie znaleziono roli ROLE_ADMIN. Dodawanie...
+18:35:48,782  INFO ContextRefreshedListener:46 - Dodawanie platform.
+18:35:48,783  INFO ContextRefreshedListener:92 - Nie znaleziono platformy Xbox 360. Dodawanie...
+18:35:48,784  INFO ContextRefreshedListener:92 - Nie znaleziono platformy PlayStation 3. Dodawanie...
+18:35:48,785  INFO ContextRefreshedListener:92 - Nie znaleziono platformy Microsoft Windows. Dodawanie...
+18:35:48,786  INFO ContextRefreshedListener:92 - Nie znaleziono platformy OS X. Dodawanie...
+18:35:48,787  INFO ContextRefreshedListener:92 - Nie znaleziono platformy Linux. Dodawanie...
+18:35:48,787  INFO ContextRefreshedListener:92 - Nie znaleziono platformy iOS. Dodawanie...
+18:35:48,788  INFO ContextRefreshedListener:92 - Nie znaleziono platformy Android. Dodawanie...
+18:35:48,789  INFO ContextRefreshedListener:92 - Nie znaleziono platformy Xbox One. Dodawanie...
+18:35:48,790  INFO ContextRefreshedListener:56 - Dodawanie języków.
+18:35:48,790  INFO ContextRefreshedListener:101 - Nie znaleziono języka Polski. Dodawanie...
+18:35:48,791  INFO ContextRefreshedListener:101 - Nie znaleziono języka Angielski. Dodawanie...
+18:35:48,792  INFO ContextRefreshedListener:101 - Nie znaleziono języka Ciapacki. Dodawanie...
+18:35:48,792  INFO ContextRefreshedListener:101 - Nie znaleziono języka Niemiecki. Dodawanie...
+18:35:48,793  INFO ContextRefreshedListener:62 - Dodawanie nośników.
+18:35:48,794  INFO ContextRefreshedListener:110 - Nie znaleziono nośnika Steam. Dodawanie...
+18:35:48,794  INFO ContextRefreshedListener:110 - Nie znaleziono nośnika Płyta CD. Dodawanie...
+18:35:48,795  INFO ContextRefreshedListener:110 - Nie znaleziono nośnika Płyta DVD. Dodawanie...
+18:35:48,795  INFO ContextRefreshedListener:67 - Dodawanie gatunków
+18:35:48,795  INFO ContextRefreshedListener:128 - Nie znaleziono gatunku first-person shooter. Dodawanie...
+18:35:48,796  INFO ContextRefreshedListener:128 - Nie znaleziono gatunku gra akcji. Dodawanie...
+18:35:48,796  INFO ContextRefreshedListener:128 - Nie znaleziono gatunku wyścigi. Dodawanie...
+18:35:48,797  INFO ContextRefreshedListener:73 - Dodawanie przykładowych gier.
+18:35:48,797  INFO ContextRefreshedListener:119 - Nie znaleziono gry Far Cry 3. Dodawanie...
+18:35:48,798  INFO ContextRefreshedListener:119 - Nie znaleziono gry Need For Speed: Most Wanted. Dodawanie...
+18:35:48,799  INFO ContextRefreshedListener:119 - Nie znaleziono gry Grand Theft Auto V. Dodawanie...

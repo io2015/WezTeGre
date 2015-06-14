@@ -3,32 +3,22 @@ package pl.weztegre.controllers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.security.crypto.codec.Base64;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import pl.weztegre.enums.State;
-import pl.weztegre.formObjects.AdvertisementForm;
 import pl.weztegre.formObjects.MessageForm;
-import pl.weztegre.jsons.AdvertisementFilterJSON;
-import pl.weztegre.jsons.AdvertisementJSON;
 import pl.weztegre.jsons.MessageJSON;
-import pl.weztegre.models.*;
-import pl.weztegre.services.*;
+import pl.weztegre.models.Message;
+import pl.weztegre.models.User;
+import pl.weztegre.services.MessageService;
+import pl.weztegre.services.UserService;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.io.IOException;
 import java.security.Principal;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 
 @Controller
 @RequestMapping(value = "/message")

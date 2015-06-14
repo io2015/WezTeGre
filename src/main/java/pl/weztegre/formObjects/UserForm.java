@@ -7,9 +7,6 @@ import pl.weztegre.models.User;
 import pl.weztegre.validators.FieldMatch;
 import pl.weztegre.validators.Unique;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Pattern;
 
 /**

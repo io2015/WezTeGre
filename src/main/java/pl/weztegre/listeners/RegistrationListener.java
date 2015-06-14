@@ -12,8 +12,6 @@ import pl.weztegre.events.OnRegistrationCompleteEvent;
 import pl.weztegre.models.User;
 import pl.weztegre.services.UserService;
 
-import java.util.UUID;
-
 
 /**
 * Klasa RegistrationListener implementuje interfejs ApplicationListener i oczekuje na zdarzenie zakończenia rejestracji

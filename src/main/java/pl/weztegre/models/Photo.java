@@ -2,8 +2,6 @@ package pl.weztegre.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Blob;
-import java.sql.SQLException;
 
 @Entity
 @Table(name = "photos")

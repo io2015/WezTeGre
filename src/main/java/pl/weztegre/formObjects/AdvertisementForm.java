@@ -1,11 +1,9 @@
 package pl.weztegre.formObjects;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
 import pl.weztegre.enums.State;
 import pl.weztegre.models.*;
 
-import java.util.Date;
 import java.util.List;
 
 /**

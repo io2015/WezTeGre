@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.weztegre.models.Distribution;
-import pl.weztegre.models.Language;
 import pl.weztegre.repositories.DistributionRepository;
-import pl.weztegre.repositories.LanguageRepository;
 
 import java.util.List;
 

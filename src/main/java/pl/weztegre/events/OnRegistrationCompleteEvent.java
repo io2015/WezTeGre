@@ -1,10 +1,9 @@
 package pl.weztegre.events;
 
-import java.util.Locale;
-
 import org.springframework.context.ApplicationEvent;
 import pl.weztegre.models.Registration;
-import pl.weztegre.models.User;
+
+import java.util.Locale;
 
 /**
 * Klasa zdarzenia OnRegistrationCompleteEvent.

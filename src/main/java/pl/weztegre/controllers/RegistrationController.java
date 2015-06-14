@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import pl.weztegre.events.OnRegistrationCompleteEvent;
-import pl.weztegre.exceptions.EmailExistsException;
-import pl.weztegre.exceptions.NickExistsException;
 import pl.weztegre.formObjects.UserForm;
 import pl.weztegre.models.Registration;
-import pl.weztegre.models.User;
 import pl.weztegre.services.RegistrationService;
 
 import javax.servlet.http.HttpServletRequest;

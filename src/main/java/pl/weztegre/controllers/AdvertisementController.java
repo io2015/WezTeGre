@@ -1,39 +1,31 @@
 package pl.weztegre.controllers;
 
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.codec.Base64;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.FileCopyUtils;
-import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.servlet.ModelAndView;
 import pl.weztegre.enums.State;
 import pl.weztegre.formObjects.AdvertisementForm;
 import pl.weztegre.formObjects.PhotoForm;
 import pl.weztegre.jsons.AdvertisementFilterJSON;
 import pl.weztegre.jsons.AdvertisementJSON;
-import pl.weztegre.models.*;
+import pl.weztegre.models.Advertisement;
+import pl.weztegre.models.Game;
+import pl.weztegre.models.GameForExchange;
+import pl.weztegre.models.Photo;
 import pl.weztegre.pojos.AdvertisementPOJO;
 import pl.weztegre.services.*;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
@@ -73,7 +65,7 @@ public class AdvertisementController {
     }
 
     @RequestMapping(value = "/list/filter", method = RequestMethod.POST,
-                    consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+            consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public List<Advertisement> filter(@RequestBody AdvertisementFilterJSON advertisementFilterJSON) {
         List<Advertisement> advertisements = null;
@@ -106,28 +98,9 @@ public class AdvertisementController {
     public String advertisement(@PathVariable Integer id, Model model) throws InterruptedException {
         AdvertisementPOJO advertisement = advertisementService.findOne(id);
 
-        for(int i = 0; i < advertisement.getGamesForExchange().size(); i++) {
-            for(int j = 0; j < advertisement.getGamesForExchange().size(); j++) {
-                if(i != j) {
-                    if(advertisement.getGamesForExchange().get(i) == advertisement.getGamesForExchange().get(j))
-                        advertisement.getGamesForExchange().remove(advertisement.getGamesForExchange().get(j));
-                }
-            }
-        }
+        prepareAdvertisement(advertisement);
 
-        for(int i = 0; i < advertisement.getPhotos().size(); i++) {
-            for(int j = 0; j < advertisement.getPhotos().size(); j++) {
-                if(i != j) {
-                    if(advertisement.getPhotos().get(i) == advertisement.getPhotos().get(j))
-                        advertisement.getPhotos().remove(advertisement.getPhotos().get(j));
-                }
-            }
-        }
-
-        List<String> photos = new LinkedList<String>();
-        for(Photo item : advertisement.getPhotos()) {
-            photos.add(new String(item.getPhoto()));
-        }
+        List<String> photos = getPhotosFromAdvertisement(advertisement);
 
         model.addAttribute("advertisement", advertisement);
         model.addAttribute("photos", photos);
@@ -136,32 +109,43 @@ public class AdvertisementController {
         return "advertisement";
     }
 
-    @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
-    public String advertisementEdit(@PathVariable Integer id, Model model) throws InterruptedException {
-        AdvertisementPOJO advertisement = advertisementService.findOne(id);
+    private void prepareAdvertisement(AdvertisementPOJO advertisement) {
 
         for(int i = 0; i < advertisement.getGamesForExchange().size(); i++) {
             for(int j = 0; j < advertisement.getGamesForExchange().size(); j++) {
-                if(i != j) {
-                    if(advertisement.getGamesForExchange().get(i) == advertisement.getGamesForExchange().get(j))
-                        advertisement.getGamesForExchange().remove(advertisement.getGamesForExchange().get(j));
+                if(i != j && advertisement.getGamesForExchange().get(i) == advertisement.getGamesForExchange().get(j)) {
+                    advertisement.getGamesForExchange().remove(advertisement.getGamesForExchange().get(j));
                 }
             }
         }
 
         for(int i = 0; i < advertisement.getPhotos().size(); i++) {
             for(int j = 0; j < advertisement.getPhotos().size(); j++) {
-                if(i != j) {
-                    if(advertisement.getPhotos().get(i) == advertisement.getPhotos().get(j))
-                        advertisement.getPhotos().remove(advertisement.getPhotos().get(j));
+                if(i != j && advertisement.getPhotos().get(i) == advertisement.getPhotos().get(j)) {
+                    advertisement.getPhotos().remove(advertisement.getPhotos().get(j));
                 }
             }
         }
+    }
+
+    private List<String> getPhotosFromAdvertisement(AdvertisementPOJO advertisement) {
 
         List<String> photos = new LinkedList<String>();
+
         for(Photo item : advertisement.getPhotos()) {
             photos.add(new String(item.getPhoto()));
         }
+
+        return photos;
+    }
+
+    @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
+    public String advertisementEdit(@PathVariable Integer id, Model model) throws InterruptedException {
+        AdvertisementPOJO advertisement = advertisementService.findOne(id);
+
+        prepareAdvertisement(advertisement);
+
+        List<String> photos = getPhotosFromAdvertisement(advertisement);
 
         model.addAttribute("advertisement", advertisement);
         model.addAttribute("photos", photos);
@@ -182,19 +166,11 @@ public class AdvertisementController {
     public AdvertisementJSON editAdvertisment(@Valid @RequestBody AdvertisementForm advertisementForm, @PathVariable Integer id, BindingResult result) {
         AdvertisementJSON advertisementJSON = new AdvertisementJSON();
         if(!result.hasErrors()) {
-            Game game = gameService.findOne(advertisementForm.getGame().getId());
+            //Game game = gameService.findOne(advertisementForm.getGame().getId());
 
-            for(GameForExchange item : advertisementForm.getGamesForExchange()) {
-                item.setGame(gameService.findOne(item.getGame().getId()));
-                item.setDistribution(distributionService.findByDistribution(item.getDistribution().getDistribution()));
-                item.setLanguage(languageService.findByLanguage(item.getLanguage().getLanguage()));
-                item.setPlatform(platformService.findByPlatform(item.getPlatform().getPlatform()));
-            }
+            processAdvertisementForm(advertisementForm);
 
-            List<Photo> photos = new LinkedList<Photo>();
-            for(PhotoForm item : advertisementForm.getPhotos()) {
-                photos.add(new Photo(item.getPhoto()));
-            }
+            List<Photo> photos = getPhotosFromAdvertisementForm(advertisementForm);
 
             Advertisement advertisement = advertisementService.findOneNormal(id);
             advertisement.setTitle(advertisementForm.getTitle());
@@ -209,24 +185,37 @@ public class AdvertisementController {
             try {
                 advertisement = advertisementService.save(advertisement);
             } catch (Exception e) {
+                LOGGER.info(e.getMessage());
                 e.printStackTrace();
             }
 
             advertisementJSON.setRedirect("advertisement/" + advertisement.getId());
         } else {
-            for(Object item : result.getAllErrors()) {
-                if(item instanceof FieldError) {
-                    FieldError fieldError = (FieldError) item;
-
-                    if(fieldError.getField().contains("title"))
-                        advertisementJSON.setTitleError(fieldError.getDefaultMessage());
-                    else if(fieldError.getField().contains("content"))
-                        advertisementJSON.setContentError(fieldError.getDefaultMessage());
-                }
-            }
+            processResultError(result, advertisementJSON);
         }
 
         return advertisementJSON;
+    }
+
+    private void processAdvertisementForm(AdvertisementForm advertisementForm) {
+
+        for(GameForExchange item : advertisementForm.getGamesForExchange()) {
+            item.setGame(gameService.findOne(item.getGame().getId()));
+            item.setDistribution(distributionService.findByDistribution(item.getDistribution().getDistribution()));
+            item.setLanguage(languageService.findByLanguage(item.getLanguage().getLanguage()));
+            item.setPlatform(platformService.findByPlatform(item.getPlatform().getPlatform()));
+        }
+    }
+
+    private List<Photo> getPhotosFromAdvertisementForm(AdvertisementForm advertisementForm) {
+
+        List<Photo> photos = new LinkedList<Photo>();
+
+        for(PhotoForm item : advertisementForm.getPhotos()) {
+            photos.add(new Photo(item.getPhoto()));
+        }
+
+        return photos;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST,
@@ -235,6 +224,9 @@ public class AdvertisementController {
     public AdvertisementJSON addAdvertisment(@Valid @RequestBody AdvertisementForm advertisementForm, BindingResult result) {
         AdvertisementJSON advertisementJSON = new AdvertisementJSON();
         if(!result.hasErrors()) {
+
+
+
             Date time = Calendar.getInstance().getTime();
 
             Calendar end = Calendar.getInstance();
@@ -243,17 +235,9 @@ public class AdvertisementController {
 
             Game game = gameService.findOne(advertisementForm.getGame().getId());
 
-            for(GameForExchange item : advertisementForm.getGamesForExchange()) {
-                item.setGame(gameService.findOne(item.getGame().getId()));
-                item.setDistribution(distributionService.findByDistribution(item.getDistribution().getDistribution()));
-                item.setLanguage(languageService.findByLanguage(item.getLanguage().getLanguage()));
-                item.setPlatform(platformService.findByPlatform(item.getPlatform().getPlatform()));
-            }
+            processAdvertisementForm(advertisementForm);
 
-            List<Photo> photos = new LinkedList<Photo>();
-            for(PhotoForm item : advertisementForm.getPhotos()) {
-                photos.add(new Photo(item.getPhoto()));
-            }
+            List<Photo> photos = getPhotosFromAdvertisementForm(advertisementForm);
 
             Advertisement advertisement = new Advertisement(
                     advertisementForm.getTitle(),
@@ -274,29 +258,35 @@ public class AdvertisementController {
             try {
                 advertisement = advertisementService.save(advertisement);
             } catch (Exception e) {
+                LOGGER.info(e.getMessage());
                 e.printStackTrace();
             }
 
             advertisementJSON.setRedirect("advertisement/" + advertisement.getId());
         } else {
-            for(Object item : result.getAllErrors()) {
-                if(item instanceof FieldError) {
-                    FieldError fieldError = (FieldError) item;
-
-                    if(fieldError.getField().contains("title"))
-                        advertisementJSON.setTitleError(fieldError.getDefaultMessage());
-                    else if(fieldError.getField().contains("content"))
-                        advertisementJSON.setContentError(fieldError.getDefaultMessage());
-                }
-            }
+            processResultError(result, advertisementJSON);
         }
 
         return advertisementJSON;
     }
 
+    private void processResultError(BindingResult result, AdvertisementJSON advertisementJSON) {
+
+        for(Object item : result.getAllErrors()) {
+            if(item instanceof FieldError) {
+                FieldError fieldError = (FieldError) item;
+
+                if(fieldError.getField().contains("title"))
+                    advertisementJSON.setTitleError(fieldError.getDefaultMessage());
+                else if(fieldError.getField().contains("content"))
+                    advertisementJSON.setContentError(fieldError.getDefaultMessage());
+            }
+        }
+    }
+
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
-    public String upload(MultipartHttpServletRequest request, HttpServletResponse response) {
+    public String upload(MultipartHttpServletRequest request/*, HttpServletResponse response*/) {
         Iterator<String> itr =  request.getFileNames();
         MultipartFile mpf = null;
 
@@ -310,6 +300,7 @@ public class AdvertisementController {
                 contentType = mpf.getContentType();
             } catch (IOException e) {
                 // TODO Auto-generated catch block
+                LOGGER.info(e.getMessage());
                 e.printStackTrace();
             }
 

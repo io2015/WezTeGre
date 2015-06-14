@@ -1,11 +1,9 @@
 package pl.weztegre.models;
 
-import org.hibernate.validator.constraints.Length;
 import pl.weztegre.enums.State;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

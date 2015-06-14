@@ -1,6 +1,5 @@
 package pl.weztegre.services;
 
-import pl.weztegre.models.Advertisement;
 import pl.weztegre.models.Message;
 import pl.weztegre.models.User;
 

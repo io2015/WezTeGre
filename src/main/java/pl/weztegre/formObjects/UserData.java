@@ -3,7 +3,6 @@ package pl.weztegre.formObjects;
 import org.hibernate.validator.constraints.Length;
 import pl.weztegre.models.User;
 
-import javax.persistence.Column;
 import javax.validation.constraints.Pattern;
 
 /**
