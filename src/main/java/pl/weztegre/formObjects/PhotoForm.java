@@ -1,5 +1,8 @@
 package pl.weztegre.formObjects;
 
+/**
+* Klasa formularza do dodawania obrazków
+**/
 public class PhotoForm {
     private Integer id;
 

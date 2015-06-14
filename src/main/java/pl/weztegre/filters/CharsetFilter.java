@@ -3,6 +3,9 @@ package pl.weztegre.filters;
 import javax.servlet.*;
 import java.io.IOException;
 
+/**
+* Filtr kodowania
+**/
 public class CharsetFilter implements Filter {
     private String encoding;
 

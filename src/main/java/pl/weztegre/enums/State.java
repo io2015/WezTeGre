@@ -1,8 +1,15 @@
 package pl.weztegre.enums;
 
+/**
+* Enum opisuje stan obiektu
+**/
 public enum State {
     New, UsedBad, UsedAverage, UsedGood;
 
+	/**
+	* Metoda toString zwraca opis powiązany z enumem
+	* @return string z opisem
+	**/
     @Override
     public String toString() {
         switch(this) {

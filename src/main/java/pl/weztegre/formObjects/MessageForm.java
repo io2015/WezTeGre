@@ -3,6 +3,9 @@ package pl.weztegre.formObjects;
 import org.hibernate.validator.constraints.Length;
 import pl.weztegre.models.User;
 
+/**
+* Klasa formularza służącego do dodawania nowych wiadomości.
+*/
 public class MessageForm {
     private User addressee;
 

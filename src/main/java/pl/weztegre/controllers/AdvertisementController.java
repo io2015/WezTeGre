@@ -82,6 +82,10 @@ public class AdvertisementController {
         return advertisements;
     }
 
+	/**
+	* Metoda dodająca ogłoszenie,
+	* @param model Model ogłoszenia
+	*/
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addAdvertisement(Model model) {
         model.addAttribute("advertisementForm", new AdvertisementForm());
@@ -94,6 +98,11 @@ public class AdvertisementController {
         return "addAdvertisement";
     }
 
+	/**
+	* Metoda pobiera ogłoszenie
+	* @param id ID ogłoszenia do pobrania
+	* @param model Model ogłoszenia
+	*/
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String advertisement(@PathVariable Integer id, Model model) throws InterruptedException {
         AdvertisementPOJO advertisement = advertisementService.findOne(id);
@@ -109,6 +118,9 @@ public class AdvertisementController {
         return "advertisement";
     }
 
+	/**
+	* Metoda przygotowuje ogłoszenie do wysłania
+	*/
     private void prepareAdvertisement(AdvertisementPOJO advertisement) {
 
         for(int i = 0; i < advertisement.getGamesForExchange().size(); i++) {
@@ -128,6 +140,9 @@ public class AdvertisementController {
         }
     }
 
+	/**
+	* Metoda pobiera obrazki z ogłoszenia
+	*/
     private List<String> getPhotosFromAdvertisement(AdvertisementPOJO advertisement) {
 
         List<String> photos = new LinkedList<String>();
@@ -139,6 +154,9 @@ public class AdvertisementController {
         return photos;
     }
 
+	/**
+	* Metoda edytuje ogłoszenie
+	*/
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String advertisementEdit(@PathVariable Integer id, Model model) throws InterruptedException {
         AdvertisementPOJO advertisement = advertisementService.findOne(id);
@@ -197,6 +215,10 @@ public class AdvertisementController {
         return advertisementJSON;
     }
 
+	
+	/**
+	* Metoda przetwarza ogłoszenie
+	*/
     private void processAdvertisementForm(AdvertisementForm advertisementForm) {
 
         for(GameForExchange item : advertisementForm.getGamesForExchange()) {
@@ -207,6 +229,11 @@ public class AdvertisementController {
         }
     }
 
+	/**
+	* Metoda pobiera obrazki z formularza ogłoszenia
+	* @param advertisementForm formularz
+	* @return Lista obrazków
+	*/
     private List<Photo> getPhotosFromAdvertisementForm(AdvertisementForm advertisementForm) {
 
         List<Photo> photos = new LinkedList<Photo>();
@@ -270,6 +297,9 @@ public class AdvertisementController {
         return advertisementJSON;
     }
 
+	/**
+	* Metoda przetwarza komunikat o błędze
+	*/
     private void processResultError(BindingResult result, AdvertisementJSON advertisementJSON) {
 
         for(Object item : result.getAllErrors()) {
