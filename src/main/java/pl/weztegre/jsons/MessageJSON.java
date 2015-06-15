@@ -1,6 +1,8 @@
 package pl.weztegre.jsons;
 
-
+/**
+* Klasa wiadomości w formacie JSON
+*/
 public class MessageJSON {
     private String subjectError;
     private String contentError;

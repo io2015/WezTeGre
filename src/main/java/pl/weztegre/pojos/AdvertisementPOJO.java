@@ -6,6 +6,9 @@ import pl.weztegre.models.*;
 import java.util.Date;
 import java.util.List;
 
+/**
+* Klasa Ogłoszenia
+*/
 public class AdvertisementPOJO {
     private Integer id;
 

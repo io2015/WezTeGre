@@ -1,5 +1,8 @@
 package pl.weztegre.jsons;
 
+/**
+* Klasa filtra ogłoszeń
+*/ 
 public class AdvertisementFilterJSON {
     private String find;
     private Boolean inDescription;

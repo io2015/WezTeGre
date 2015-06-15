@@ -10,6 +10,9 @@ import pl.weztegre.models.Genre;
 import pl.weztegre.repositories.GenreRepository;
 import pl.weztegre.services.*;
 
+/**
+* Klasa ContextRefreshedListener, implementuje interfejs ApplicationListener
+*/
 @Component
 public class ContextRefreshedListener implements ApplicationListener<ContextRefreshedEvent> {
     private final Logger LOGGER = LoggerFactory.getLogger(ContextRefreshedListener.class);
@@ -34,6 +37,9 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
     @Autowired
     private GenreService genreService;
 
+	/**
+	* Metoda inicjalizująca bazę danych
+	*/
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         if(roleService == null || configured == true)
@@ -78,6 +84,10 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
         configured = true;
     }
 
+	/**
+	* Metoda tworzy brakującą rolę
+	* @param role Nazwa roli
+	*/
     private void createRoleIfDoesntExist(String role) {
         if(roleService.findRole(role) == null) {
             LOGGER.info("Nie znaleziono roli " + role + ". Dodawanie...");
@@ -87,6 +97,10 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
             LOGGER.info("Rola " + role + " juz istnieje.");
     }
 
+	/**
+	* Metoda dodaje nową platformę, jeżeli ona nie istnieje
+	* @param platform Nazwa platformy
+	*/
     private void createPlatformIfDoesntExist(String platform) {
         if(platformService.findByPlatform(platform) == null) {
             LOGGER.info("Nie znaleziono platformy " + platform + ". Dodawanie...");
@@ -96,6 +110,10 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
             LOGGER.info("Platforma " + platform + " juz istnieje.");
     }
 
+	/**
+	* Metoda dodająca nowy język
+	* @param language nazwa języka
+	*/
     private void createLanguageIfDoesntExist(String language) {
         if(languageService.findByLanguage(language) == null) {
             LOGGER.info("Nie znaleziono języka " + language + ". Dodawanie...");
@@ -104,7 +122,10 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
         else
             LOGGER.info("Język " + language + " juz istnieje.");
     }
-
+	/**
+	* Metoda dodająca nowy nośnik
+	* @param distribution nazwa nośnika
+	*/
     private void createDistributionIfDoesntExist(String distribution) {
         if(distributionService.findByDistribution(distribution) == null) {
             LOGGER.info("Nie znaleziono nośnika " + distribution + ". Dodawanie...");
@@ -114,6 +135,11 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
             LOGGER.info("Nośnik " + distribution + " juz istnieje.");
     }
 
+	/**
+	* Metoda dodaje nową grę
+	* @param name Nazwa gry
+	* @param genre Gatunek gry
+	*/
     private void createGameIfDoesntExist(String name, Genre genre) {
         if(gameService.findByName(name) == null) {
             LOGGER.info("Nie znaleziono gry " + name + ". Dodawanie...");
@@ -122,7 +148,11 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
         else
             LOGGER.info("Gra " + name + " juz istnieje.");
     }
-
+	
+	/**
+	* Metoda dodająca nowy gatunek jeżeli nie istnieje on w systemie
+	* @param genre Nazwa gatunku
+	*/
     private void createGenreIfDoesntExist(String genre) {
         if(genreService.findByGenre(genre) == null) {
             LOGGER.info("Nie znaleziono gatunku " + genre + ". Dodawanie...");

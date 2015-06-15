@@ -20,6 +20,9 @@ import java.security.Principal;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+* Klasa kontrolera wiadomości.
+*/
 @Controller
 @RequestMapping(value = "/message")
 public class MessageController {
@@ -31,6 +34,9 @@ public class MessageController {
     @Autowired
     private MessageService messageService;
 
+	/**
+	* Metoda pozwala na dodanie nowej wiadomości.
+	*/
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addPage(Model model) {
         model.addAttribute("users", userService.findAll());
@@ -38,6 +44,9 @@ public class MessageController {
         return "addMessage";
     }
 
+	/**
+	* Metoda służąca do wyświetlania podstron o podanym id
+	*/
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showPage(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("message", messageService.findOne(id));
@@ -45,6 +54,9 @@ public class MessageController {
         return "message";
     }
 
+	/**
+	* Metoda pozwala na dodawanie nowej wiadomości.
+	*/
     @RequestMapping(value = "/add", method = RequestMethod.POST,
             consumes = "application/json", produces = "application/json")
     @ResponseBody
@@ -88,6 +100,9 @@ public class MessageController {
         return messageJSON;
     }
 
+	/**
+	* Metoda wyświetlająca wszystkie wiadomości.
+	*/
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String listMessages(Model model, Principal userPrincipal) {
         model.addAttribute("messages",

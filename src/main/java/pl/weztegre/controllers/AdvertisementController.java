@@ -28,6 +28,9 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.util.*;
 
+/**
+* Klasa kontrolera ogłoszeń, pozwala na dodawanie nowych/przeglądanie istniejących ogłoszeń.
+*/
 @Controller
 @RequestMapping(value = "/advertisement")
 public class AdvertisementController {
@@ -63,7 +66,9 @@ public class AdvertisementController {
 
         return "listOfAdvertisements";
     }
-
+	/**
+	* Metoda filtrująca ogłoszenia.
+	*/
     @RequestMapping(value = "/list/filter", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
@@ -178,6 +183,9 @@ public class AdvertisementController {
         return "editAdvertisement";
     }
 
+	/**
+	* Metoda pozwalająca na edycję istniejących ogłoszeń. Edycja odbywa się metodą POST.
+	*/
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.POST,
             consumes = "application/json", produces = "application/json")
     @ResponseBody
@@ -314,6 +322,9 @@ public class AdvertisementController {
         }
     }
 
+	/**
+	* Metoda pozwala na dodawanie plików, metoda POST.
+	*/
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public String upload(MultipartHttpServletRequest request/*, HttpServletResponse response*/) {

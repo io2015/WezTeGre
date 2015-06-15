@@ -1,6 +1,9 @@
 package pl.weztegre.jsons;
 
 
+/**
+* Klasa ogłoszenia w formacie JSON
+*/
 public class AdvertisementJSON {
     private String titleError;
     private String contentError;
